@@ -32,19 +32,71 @@
             box-sizing: border-box;
         }
         
-        html, body {
-            height: 100%;
-            overflow: hidden;
-            font-family: cursive;
+        html {
+            scroll-behavior: smooth;
         }
-        
+
         body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: cursive;
+            padding-top: 80px;
             background-image: url('/background.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             position: relative;
+            transition: all 0.3s ease;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            pointer-events: none;
+            z-index: 1;
+            transition: background 0.3s ease;
+        }
+
+        body.scrolled::before {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Section styling */
+        .section {
+            min-height: 100vh;
+            padding: 4rem 0;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #ffffff;
+        }
+
+        .section-content {
+            color: #ffffff;
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
 
         .glowing-text {
@@ -201,8 +253,8 @@
 
         /* Lion icon and arrows container */
         .lion-container {
-            position: fixed;
-            bottom: 20px;
+            position: absolute;
+            bottom: 80px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -274,7 +326,7 @@
 
         @media (max-width: 768px) {
             .lion-container {
-                bottom: 15px;
+                bottom: 60px;
                 gap: 15px;
             }
             
@@ -290,7 +342,7 @@
 
         @media (max-width: 480px) {
             .lion-container {
-                bottom: 10px;
+                bottom: 40px;
                 gap: 10px;
             }
             
@@ -312,13 +364,59 @@
             width: 100%;
             background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
-            z-index: 1000;
+            z-index: 1001;
             padding: 1rem 2rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .nav-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .nav-logo {
-            display: block;
+            justify-self: start;
+        }
+
+        .nav-center {
+            justify-self: center;
+        }
+
+        .nav-social {
+            justify-self: end;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .social-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+            padding: 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .social-link:hover {
+            opacity: 1;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-logo {
+            justify-self: start;
             text-decoration: none;
         }
 
@@ -334,6 +432,73 @@
             filter: brightness(1.3) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
         }
 
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: cursive;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            opacity: 0.8;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
         @media (max-width: 768px) {
             .navbar {
                 padding: 0.75rem 1rem;
@@ -342,14 +507,65 @@
             .nav-logo img {
                 height: 35px;
             }
+
+            .nav-social {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.95);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+                gap: 1.5rem;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Horizontal scrolling animation */
+        @keyframes scroll-horizontal {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Memories container */
+        .memories-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        /* Hide scrollbar */
+        .memories-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .memories-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
         /* Parchment paper */
         .parchment {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-2deg);
             width: 250px;
             height: 160px;
             background: linear-gradient(145deg, #f4e4bc 0%, #e8d5a3 15%, #f0e1b8 85%, #d4c394 100%);
@@ -401,9 +617,9 @@
             font-family: cursive;
             font-size: 1.8rem;
             font-weight: bold;
-            color: #5d4e37;
+            color: #000000;
             text-shadow: 
-                1px 1px 2px rgba(0, 0, 0, 0.2),
+                1px 1px 2px rgba(255, 255, 255, 0.2),
                 0 0 10px rgba(139, 69, 19, 0.3);
             letter-spacing: 1px;
             line-height: 1.2;
@@ -606,69 +822,375 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <a href="index.html" class="nav-logo">
-            <img src="/ZY.png" alt="ZY Logo">
-        </a>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" style="display: flex; align-items: center; gap: 12px;">
+                <img src="/ZY.png" alt="ZY Logo">
+                <span style="color: #ffffff; font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; font-family: cursive;">유진영</span>
+            </a>
+            
+            <div class="nav-center">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experiences" class="nav-link">Experiences</a></li>
+                    <li><a href="#memories" class="nav-link">Memories</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-social">
+                <a href="https://github.com/zach3141592" target="_blank" class="social-link" title="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/zacharyyu/" target="_blank" class="social-link" title="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://x.com/thezacharyyu" target="_blank" class="social-link" title="Twitter">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="mailto:zyu31415@gmail.com" class="social-link" title="Email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.907L12 8.992l9.457-5.171h.907c.904 0 1.636.732 1.636 1.636z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
 
-    <!-- Glowing text elements with fairy dust -->
-    <a href="resume.html" id="resume" class="glowing-text">
-        Resume
-        <div class="fairy-dust blue" style="top: -10px; left: -15px;"></div>
-        <div class="fairy-dust green" style="top: -5px; right: -10px;"></div>
-        <div class="fairy-dust pink" style="bottom: -8px; left: 20px;"></div>
-        <div class="fairy-dust yellow" style="top: 10px; right: 30px;"></div>
-        <div class="fairy-dust purple" style="bottom: 5px; right: -5px;"></div>
-        <div class="fairy-dust" style="top: -12px; left: 50px;"></div>
-    </a>
+    <!-- Home Section -->
+    <section id="home" class="section" style="position: relative; display: flex; align-items: center; justify-content: center;">
+        <div class="container" style="position: relative; height: calc(100vh - 80px);">
+            <!-- Name text -->
+            <div style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <h1 style="color: #ffffff; font-size: 4rem; font-weight: 700; margin: 0; letter-spacing: 0.1em; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2); font-family: cursive;">ZACHARY YU</h1>
+            </div>
+            
+            <!-- Lion icon with horizontal arrows -->
+            <div class="lion-container">
+                <a href="https://cs.uwatering.com/#https://www.zacharyyu.com/?nav=prev" target="_blank" style="text-decoration: none; color: inherit;" title="Previous student in webring">
+                    <div class="arrow-horizontal">←</div>
+                </a>
+                <a href="https://cs.uwatering.com/#https://www.zacharyyu.com/" target="_blank" style="text-decoration: none; color: inherit;" title="Visit UWaterloo CS Webring">
+                    <img src="https://cs.uwatering.com/icon.white.svg" alt="Lion Icon" class="corner-icon">
+                </a>
+                <a href="https://cs.uwatering.com/#https://www.zacharyyu.com/?nav=next" target="_blank" style="text-decoration: none; color: inherit;" title="Next student in webring">
+                    <div class="arrow-horizontal">→</div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <a href="memory-lane.html" id="memory-lane" class="glowing-text">
-        Memory Lane
-        <div class="fairy-dust pink" style="top: -8px; left: -20px;"></div>
-        <div class="fairy-dust blue" style="top: 5px; right: -15px;"></div>
-        <div class="fairy-dust yellow" style="bottom: -10px; left: 30px;"></div>
-        <div class="fairy-dust green" style="top: -15px; right: 40px;"></div>
-        <div class="fairy-dust purple" style="bottom: 8px; right: -8px;"></div>
-        <div class="fairy-dust" style="top: 12px; left: -5px;"></div>
-    </a>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 3rem; max-width: 800px; margin: 0 auto;">
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.1);">
+                        <img src="/head.png" alt="Zachary Yu" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                
+                <div class="section-content" style="text-align: center;">
+                    <p style="margin-bottom: 1.5rem;">
+                        Hello! I'm Zachary Yu, a passionate full-stack developer with a love for 
+                        creating innovative digital solutions. I specialize in building responsive, 
+                        user-friendly applications that solve real-world problems.
+                    </p>
+                    <p style="margin-bottom: 1.5rem;">
+                        With expertise in modern web technologies and a keen eye for design, 
+                        I enjoy the entire development process - from initial concept and design 
+                        to implementation and deployment.
+                    </p>
+                    <p style="margin-bottom: 2rem;">
+                        When I'm not coding, you can find me exploring new technologies, 
+                        contributing to open-source projects, reading about emerging tech trends, 
+                        or enjoying the great outdoors.
+                    </p>
+                    
+                    <h3 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem;">What I Do</h3>
+                    <p>
+                        I create full-stack web applications, design user interfaces, 
+                        build RESTful APIs, implement databases, and ensure optimal 
+                        performance and security across all projects.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <a href="about.html" id="about" class="glowing-text">
-        About
-        <div class="fairy-dust green" style="top: -12px; left: -10px;"></div>
-        <div class="fairy-dust yellow" style="top: -8px; right: -12px;"></div>
-        <div class="fairy-dust blue" style="bottom: -5px; left: 15px;"></div>
-        <div class="fairy-dust pink" style="top: 8px; right: 25px;"></div>
-        <div class="fairy-dust purple" style="bottom: 10px; right: -10px;"></div>
-        <div class="fairy-dust" style="top: -5px; left: 35px;"></div>
-    </a>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">E-Commerce</div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">E-Commerce Platform</h3>
+                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">
+                            A full-stack e-commerce solution built with React and Node.js, 
+                            featuring real-time inventory management and secure payments.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">React</span>
+                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">Node.js</span>
+                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
 
-    <a href="projects.html" id="projects-bottom" class="glowing-text">
-        Projects
-        <div class="fairy-dust purple" style="top: -10px; left: -18px;"></div>
-        <div class="fairy-dust blue" style="top: -12px; right: -8px;"></div>
-        <div class="fairy-dust green" style="bottom: -8px; left: 25px;"></div>
-        <div class="fairy-dust yellow" style="top: 6px; right: 45px;"></div>
-        <div class="fairy-dust pink" style="bottom: 5px; right: -12px;"></div>
-        <div class="fairy-dust" style="top: -8px; left: 60px;"></div>
-    </a>
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Task Manager</div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Task Management App</h3>
+                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">
+                            A collaborative task management application with real-time updates, 
+                            drag-and-drop functionality, and team collaboration features.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">Vue.js</span>
+                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">Firebase</span>
+                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">PWA</span>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Parchment paper with name -->
-    <div class="parchment">
-        <div class="parchment-corner top-left"></div>
-        <div class="parchment-corner top-right"></div>
-        <div class="parchment-corner bottom-left"></div>
-        <div class="parchment-corner bottom-right"></div>
-        <div class="parchment-text">Zachary Yu</div>
-    </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Design System</div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Design System Library</h3>
+                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">
+                            A comprehensive design system and component library for consistent 
+                            UI/UX across multiple applications and platforms.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">Storybook</span>
+                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">TypeScript</span>
+                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">Sass</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Lion icon with horizontal arrows -->
-    <a href="https://cs.uwatering.com/" target="_blank" class="lion-container" title="Visit UWaterloo CS Webring">
-        <div class="arrow-horizontal">←</div>
-        <img src="https://cs.uwatering.com/icon.white.svg" alt="Lion Icon" class="corner-icon">
-        <div class="arrow-horizontal">→</div>
-    </a>
+    <!-- Experiences Section -->
+    <section id="experiences" class="section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="section-content">
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; margin: 2rem 0; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.5rem;">Senior Full-Stack Developer</div>
+                    <div style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem;">Tech Innovations Inc.</div>
+                    <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">2022 - Present</div>
+                    <div style="color: #ffffff; line-height: 1.6;">
+                        Leading development of enterprise web applications, mentoring junior developers, 
+                        and implementing modern technologies to improve system performance and user experience.
+                    </div>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; margin: 2rem 0; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.5rem;">Full-Stack Developer</div>
+                    <div style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem;">Digital Solutions LLC</div>
+                    <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">2020 - 2022</div>
+                    <div style="color: #ffffff; line-height: 1.6;">
+                        Developed and maintained multiple client websites and applications using React, 
+                        Node.js, and various databases. Collaborated with design teams to create 
+                        responsive and accessible user interfaces.
+                    </div>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; margin: 2rem 0; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.5rem;">Frontend Developer</div>
+                    <div style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem;">StartUp Ventures</div>
+                    <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">2019 - 2020</div>
+                    <div style="color: #ffffff; line-height: 1.6;">
+                        Built responsive web applications and landing pages for various startup clients. 
+                        Focused on performance optimization and modern JavaScript frameworks.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memories Section -->
+    <section id="memories" class="section">
+        <div class="container">
+            <h2 class="section-title">Memory Lane</h2>
+            <div class="memories-container" style="overflow-x: auto; overflow-y: hidden; padding: 2rem 0; margin: 0 -2rem;">
+                <div class="memories-scroll" style="display: flex; gap: 2rem; padding: 0 2rem; width: max-content; animation: scroll-horizontal 30s linear infinite;">
+                    
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Achievement</div>
+                        <div style="padding: 1.5rem;">
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">First Hackathon Win</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">October 2021</div>
+                            <div style="color: #ffffff; line-height: 1.6;">
+                                Won first place in a 48-hour hackathon with a team project 
+                                that solved local business inventory management.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Mentoring</div>
+                        <div style="padding: 1.5rem;">
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Mentoring Journey</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">2022 - Present</div>
+                            <div style="color: #ffffff; line-height: 1.6;">
+                                Started mentoring junior developers and bootcamp students. 
+                                Nothing beats seeing someone write their first working program.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Deployment</div>
+                        <div style="padding: 1.5rem;">
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">First Production Deploy</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">March 2020</div>
+                            <div style="color: #ffffff; line-height: 1.6;">
+                                The nervousness and excitement of pushing code to production 
+                                for the first time. Learned about deployment pipelines.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Learning</div>
+                        <div style="padding: 1.5rem;">
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">First Programming Course</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">September 2019</div>
+                            <div style="color: #ffffff; line-height: 1.6;">
+                                Taking my first computer science course and discovering 
+                                the magic of turning ideas into working code.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Community</div>
+                        <div style="padding: 1.5rem;">
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Open Source Contribution</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">June 2021</div>
+                            <div style="color: #ffffff; line-height: 1.6;">
+                                Made my first meaningful contribution to an open source project. 
+                                Felt amazing to help improve software used by thousands.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Innovation</div>
+                        <div style="padding: 1.5rem;">
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Tech Conference Speaker</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">November 2022</div>
+                            <div style="color: #ffffff; line-height: 1.6;">
+                                Gave my first tech talk at a local developer conference. 
+                                Sharing knowledge with the community was incredibly rewarding.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicate cards for seamless loop -->
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Achievement</div>
+                        <div style="padding: 1.5rem;">
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">First Hackathon Win</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">October 2021</div>
+                            <div style="color: #ffffff; line-height: 1.6;">
+                                Won first place in a 48-hour hackathon with a team project 
+                                that solved local business inventory management.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Mentoring</div>
+                        <div style="padding: 1.5rem;">
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Mentoring Journey</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">2022 - Present</div>
+                            <div style="color: #ffffff; line-height: 1.6;">
+                                Started mentoring junior developers and bootcamp students. 
+                                Nothing beats seeing someone write their first working program.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Deployment</div>
+                        <div style="padding: 1.5rem;">
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">First Production Deploy</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">March 2020</div>
+                            <div style="color: #ffffff; line-height: 1.6;">
+                                The nervousness and excitement of pushing code to production 
+                                for the first time. Learned about deployment pipelines.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.2); padding: 2rem 0; margin-top: 4rem; position: relative; z-index: 1002;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+            <p style="color: #ffffff; font-family: cursive; font-size: 1rem; margin: 0; opacity: 1; font-weight: 700;">
+                made by zach yu.
+            </p>
+        </div>
+    </footer>
 
     <script>
+                // Mobile navigation toggle
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('.nav-menu');
+
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking on a link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+
+                // Add scroll effect to darken background after home section
+                function handleScroll() {
+                    const homeSection = document.getElementById('home');
+                    const homeSectionHeight = homeSection.offsetHeight;
+                    const scrollY = window.scrollY;
+                    
+                    if (scrollY > homeSectionHeight * 0.7) {
+                        document.body.classList.add('scrolled');
+                    } else {
+                        document.body.classList.remove('scrolled');
+                    }
+                }
+
+                // Listen for scroll events
+                window.addEventListener('scroll', handleScroll);
+                
+                // Initial check on page load
+                handleScroll();
 
         // Add more dynamic fairy dust particles
         function createFairyDust(element) {
