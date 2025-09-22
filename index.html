@@ -539,13 +539,13 @@
             }
         }
 
-        /* Horizontal scrolling animation */
+        /* Show all 9 memories before looping */
         @keyframes scroll-horizontal {
             0% {
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(-50%);
+                transform: translateX(-3168px); /* 9 cards * (350px width + 32px gap) = 3168px */
             }
         }
 
@@ -847,7 +847,6 @@
             <div class="nav-center">
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#experiences" class="nav-link">Experiences</a></li>
                     <li><a href="#memories" class="nav-link">Memories</a></li>
@@ -904,45 +903,6 @@
                 <a href="https://cs.uwatering.com/#https://www.zacharyyu.com/?nav=next" target="_blank" style="text-decoration: none; color: inherit;" title="Next student in webring">
                     <div class="arrow-horizontal">→</div>
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 3rem; max-width: 800px; margin: 0 auto;">
-                <div style="display: flex; justify-content: center; align-items: center;">
-                    <div style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.1);">
-                        <img src="/head.png" alt="Zachary Yu" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
-                
-                <div class="section-content" style="text-align: center;">
-                    <p style="margin-bottom: 1.5rem;">
-                        Hello! I'm Zachary Yu, a passionate full-stack developer with a love for 
-                        creating innovative digital solutions. I specialize in building responsive, 
-                        user-friendly applications that solve real-world problems.
-                    </p>
-                    <p style="margin-bottom: 1.5rem;">
-                        With expertise in modern web technologies and a keen eye for design, 
-                        I enjoy the entire development process - from initial concept and design 
-                        to implementation and deployment.
-                    </p>
-                    <p style="margin-bottom: 2rem;">
-                        When I'm not coding, you can find me exploring new technologies, 
-                        contributing to open-source projects, reading about emerging tech trends, 
-                        or enjoying the great outdoors.
-                    </p>
-                    
-                    <h3 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem;">What I Do</h3>
-                    <p>
-                        I create full-stack web applications, design user interfaces, 
-                        build RESTful APIs, implement databases, and ensure optimal 
-                        performance and security across all projects.
-                    </p>
-                </div>
             </div>
         </div>
     </section>
@@ -1049,111 +1009,128 @@
             <div class="memories-container" style="overflow-x: auto; overflow-y: hidden; padding: 2rem 0; margin: 0 -2rem;">
                 <div class="memories-scroll" style="display: flex; gap: 2rem; padding: 0 2rem; width: max-content; animation: scroll-horizontal 30s linear infinite;">
                     
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Achievement</div>
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="/memories/yc.png" alt="Y Combinator" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
                         <div style="padding: 1.5rem;">
-                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">First Hackathon Win</div>
-                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">October 2021</div>
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Very Cool People</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Sept 2025</div>
                             <div style="color: #ffffff; line-height: 1.6;">
-                                Won first place in a 48-hour hackathon with a team project 
-                                that solved local business inventory management.
+                                Got dinner with YC, got boba with Mintlify, met 
+                                Got inspired at Waterloo Tech Week.
                             </div>
                         </div>
                     </div>
 
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Mentoring</div>
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="/memories/terrahacks.png" alt="TerraHacks" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
                         <div style="padding: 1.5rem;">
-                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Mentoring Journey</div>
-                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">2022 - Present</div>
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">TerraHacks</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Aug 2025</div>
                             <div style="color: #ffffff; line-height: 1.6;">
-                                Started mentoring junior developers and bootcamp students. 
-                                Nothing beats seeing someone write their first working program.
+                                Met some very cool people at TerraHacks. 
+                                Made tinder for finding medical trial / volunteer participants.
                             </div>
                         </div>
                     </div>
 
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Deployment</div>
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="/memories/uwmafia.png" alt="UW Mafia" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
                         <div style="padding: 1.5rem;">
-                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">First Production Deploy</div>
-                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">March 2020</div>
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">UW Mafia</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Sept 2025</div>
                             <div style="color: #ffffff; line-height: 1.6;">
-                                The nervousness and excitement of pushing code to production 
-                                for the first time. Learned about deployment pipelines.
+                                Met cracked people who I can't believe are my age.
+                                Got invited to Akatose hacker house.
                             </div>
                         </div>
                     </div>
 
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Learning</div>
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="/memories/hammerhacks.png" alt="HammerHacks" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
                         <div style="padding: 1.5rem;">
-                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">First Programming Course</div>
-                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">September 2019</div>
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Winning at HammerHacks</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Nov 2024</div>
                             <div style="color: #ffffff; line-height: 1.6;">
-                                Taking my first computer science course and discovering 
-                                the magic of turning ideas into working code.
+                                Won HammerHacks with some good friends.
+                                Made people laugh during the pitch.
                             </div>
                         </div>
                     </div>
 
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Community</div>
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="/memories/solutionHacks.png" alt="SolutionHacks" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
                         <div style="padding: 1.5rem;">
-                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Open Source Contribution</div>
-                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">June 2021</div>
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Winning at SolutionHacks</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">July 2025</div>
                             <div style="color: #ffffff; line-height: 1.6;">
-                                Made my first meaningful contribution to an open source project. 
-                                Felt amazing to help improve software used by thousands.
+                                Won SolutionHacks during my first solo hackathon.
+                                Ate a lot of food.
                             </div>
                         </div>
                     </div>
 
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Innovation</div>
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="/memories/bdc.png" alt="Big Data Challenge National Finals" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
                         <div style="padding: 1.5rem;">
-                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Tech Conference Speaker</div>
-                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">November 2022</div>
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Big Data Challenge National Finals</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Feb 2025</div>
                             <div style="color: #ffffff; line-height: 1.6;">
-                                Gave my first tech talk at a local developer conference. 
-                                Sharing knowledge with the community was incredibly rewarding.
+                                Went to the Big Data Challenge National Finals for the 3rd time.
+                                Published an ML paper with some good people.
                             </div>
                         </div>
                     </div>
                     
                     <!-- Duplicate cards for seamless loop -->
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Achievement</div>
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="/memories/beertown.png" alt="beer town" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
                         <div style="padding: 1.5rem;">
-                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">First Hackathon Win</div>
-                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">October 2021</div>
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Locked In</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Sept 2025</div>
                             <div style="color: #ffffff; line-height: 1.6;">
-                                Won first place in a 48-hour hackathon with a team project 
-                                that solved local business inventory management.
+                                Normal dinner with waterloo cs kids.
                             </div>
                         </div>
                     </div>
 
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Mentoring</div>
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="/memories/graduation.png" alt="grad" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
                         <div style="padding: 1.5rem;">
-                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Mentoring Journey</div>
-                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">2022 - Present</div>
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Graduation</div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">June 2025</div>
                             <div style="color: #ffffff; line-height: 1.6;">
-                                Started mentoring junior developers and bootcamp students. 
-                                Nothing beats seeing someone write their first working program.
+                                Walked on stage. Won awards.
+                                Made parents proud.
                             </div>
                         </div>
                     </div>
 
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Deployment</div>
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="/memories/piano.png" alt="piano" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
                         <div style="padding: 1.5rem;">
-                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">First Production Deploy</div>
-                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">March 2020</div>
+                            <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Piano </div>
+                            <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">March 2008</div>
                             <div style="color: #ffffff; line-height: 1.6;">
-                                The nervousness and excitement of pushing code to production 
-                                for the first time. Learned about deployment pipelines.
+                                Touched a piano for the first time.
+                                Met a life long friend.
                             </div>
                         </div>
                     </div>
@@ -1174,9 +1151,9 @@
             <script>
                 // Page should load and immediately go to home page
                 window.addEventListener('DOMContentLoaded', () => {
-                    // Remove any hash from URL to prevent auto-scrolling
-                    if (window.location.hash) {
-                        history.replaceState(null, null, window.location.pathname + window.location.search);
+                    // Clean URL to show just domain (zacharyyu.com)
+                    if (window.location.pathname !== '/' || window.location.hash || window.location.search) {
+                        history.replaceState(null, null, '/');
                     }
                     // Immediately navigate to home section
                     const homeSection = document.getElementById('home');
