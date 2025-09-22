@@ -103,7 +103,7 @@
         }
 
         /* Position text elements around the background */
-        #projects {
+        #resume {
             top: 20%;
             left: 15%;
         }
@@ -118,7 +118,7 @@
             left: 10%;
         }
 
-        #vibe-coding {
+        #projects-bottom {
             bottom: 15%;
             right: 15%;
         }
@@ -171,7 +171,7 @@
                 font-size: 1.8rem;
             }
             
-            #projects {
+            #resume {
                 top: 15%;
                 left: 10%;
             }
@@ -186,7 +186,7 @@
                 left: 5%;
             }
 
-            #vibe-coding {
+            #projects-bottom {
                 bottom: 10%;
                 right: 5%;
             }
@@ -195,6 +195,177 @@
         @media (max-width: 480px) {
             .glowing-text {
                 font-size: 1.4rem;
+            }
+        }
+
+        /* Bottom right corner image */
+        .corner-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            z-index: 100;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+
+        .corner-icon:hover {
+            opacity: 1;
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+        }
+
+        @media (max-width: 768px) {
+            .corner-icon {
+                width: 35px;
+                height: 35px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .corner-icon {
+                width: 30px;
+                height: 30px;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+
+        /* Parchment paper */
+        .parchment {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-2deg);
+            width: 250px;
+            height: 160px;
+            background: linear-gradient(145deg, #f4e4bc 0%, #e8d5a3 15%, #f0e1b8 85%, #d4c394 100%);
+            border: 2px solid #b8a082;
+            border-radius: 8px;
+            box-shadow: 
+                0 0 20px rgba(0, 0, 0, 0.3),
+                inset 0 0 30px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            animation: parchmentFloat 6s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .parchment:hover {
+            transform: translate(-50%, -50%) rotate(-2deg) scale(1.05);
+        }
+
+        .parchment::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: radial-gradient(ellipse at center, rgba(139, 69, 19, 0.1) 0%, transparent 70%);
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        .parchment::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+
+        .parchment-text {
+            font-family: cursive;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #5d4e37;
+            text-shadow: 
+                1px 1px 2px rgba(0, 0, 0, 0.2),
+                0 0 10px rgba(139, 69, 19, 0.3);
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        @keyframes parchmentFloat {
+            0%, 100% {
+                transform: translate(-50%, -50%) rotate(-2deg);
+            }
+            50% {
+                transform: translate(-50%, -51%) rotate(-1.5deg);
+            }
+        }
+
+        /* Parchment corner decorations */
+        .parchment-corner {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #d4c394;
+            border: 1px solid #b8a082;
+        }
+
+        .parchment-corner.top-left {
+            top: -2px;
+            left: -2px;
+            border-radius: 0 0 8px 0;
+            transform: rotate(0deg);
+        }
+
+        .parchment-corner.top-right {
+            top: -2px;
+            right: -2px;
+            border-radius: 0 0 0 8px;
+            transform: rotate(0deg);
+        }
+
+        .parchment-corner.bottom-left {
+            bottom: -2px;
+            left: -2px;
+            border-radius: 0 8px 0 0;
+            transform: rotate(0deg);
+        }
+
+        .parchment-corner.bottom-right {
+            bottom: -2px;
+            right: -2px;
+            border-radius: 8px 0 0 0;
+            transform: rotate(0deg);
+        }
+
+        /* Responsive parchment */
+        @media (max-width: 768px) {
+            .parchment {
+                width: 200px;
+                height: 130px;
+            }
+            
+            .parchment-text {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .parchment {
+                width: 180px;
+                height: 110px;
+            }
+            
+            .parchment-text {
+                font-size: 1.3rem;
             }
         }
 
@@ -325,8 +496,8 @@
 </head>
 <body>
     <!-- Glowing text elements with fairy dust -->
-    <div id="projects" class="glowing-text">
-        Projects
+    <div id="resume" class="glowing-text">
+        Resume
         <div class="fairy-dust blue" style="top: -10px; left: -15px;"></div>
         <div class="fairy-dust green" style="top: -5px; right: -10px;"></div>
         <div class="fairy-dust pink" style="bottom: -8px; left: 20px;"></div>
@@ -355,8 +526,8 @@
         <div class="fairy-dust" style="top: -5px; left: 35px;"></div>
     </div>
 
-    <div id="vibe-coding" class="glowing-text">
-        Vibe Coding Corner
+    <div id="projects-bottom" class="glowing-text">
+        Projects
         <div class="fairy-dust purple" style="top: -10px; left: -18px;"></div>
         <div class="fairy-dust blue" style="top: -12px; right: -8px;"></div>
         <div class="fairy-dust green" style="bottom: -8px; left: 25px;"></div>
@@ -364,6 +535,18 @@
         <div class="fairy-dust pink" style="bottom: 5px; right: -12px;"></div>
         <div class="fairy-dust" style="top: -8px; left: 60px;"></div>
     </div>
+
+    <!-- Parchment paper with name -->
+    <div class="parchment">
+        <div class="parchment-corner top-left"></div>
+        <div class="parchment-corner top-right"></div>
+        <div class="parchment-corner bottom-left"></div>
+        <div class="parchment-corner bottom-right"></div>
+        <div class="parchment-text">Zachary Yu</div>
+    </div>
+
+    <!-- Bottom right corner icon -->
+    <img src="https://cs.uwatering.com/icon.white.svg" alt="Icon" class="corner-icon">
 
     <script>
 
