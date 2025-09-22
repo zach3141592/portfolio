@@ -1171,7 +1171,22 @@
         </div>
     </footer>
 
-    <script>
+            <script>
+                // Ensure page loads at home position
+                window.addEventListener('load', () => {
+                    // Remove any hash from URL to prevent auto-scrolling
+                    if (window.location.hash) {
+                        history.replaceState(null, null, window.location.pathname + window.location.search);
+                    }
+                    // Scroll to top on page load
+                    window.scrollTo(0, 0);
+                });
+
+                // Prevent back/forward navigation from scrolling to wrong position
+                window.addEventListener('beforeunload', () => {
+                    window.scrollTo(0, 0);
+                });
+
                 // Mobile navigation toggle
                 const hamburger = document.querySelector('.hamburger');
                 const navMenu = document.querySelector('.nav-menu');
