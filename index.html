@@ -254,7 +254,7 @@
         /* Lion icon and arrows container */
         .lion-container {
             position: absolute;
-            bottom: 80px;
+            bottom: 120px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -326,7 +326,7 @@
 
         @media (max-width: 768px) {
             .lion-container {
-                bottom: 60px;
+                bottom: 100px;
                 gap: 15px;
             }
             
@@ -342,7 +342,7 @@
 
         @media (max-width: 480px) {
             .lion-container {
-                bottom: 40px;
+                bottom: 80px;
                 gap: 10px;
             }
             
@@ -886,10 +886,10 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="section" style="position: relative; display: flex; align-items: center; justify-content: center;">
-        <div class="container" style="position: relative; height: calc(100vh - 80px);">
+    <section id="home" class="section" style="position: relative; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin-top: -80px; padding-top: 80px;">
+        <div class="container" style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center;">
             <!-- Name text -->
-            <div style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
                 <h1 style="color: #ffffff; font-size: 4rem; font-weight: 700; margin: 0; letter-spacing: 0.1em; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2); font-family: cursive; animation: animate-into-place 2.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);">ZACHARY YU</h1>
             </div>
             
@@ -1172,14 +1172,29 @@
     </footer>
 
             <script>
-                // Ensure page loads at home position
-                window.addEventListener('load', () => {
+                // Page should load and immediately go to home page
+                window.addEventListener('DOMContentLoaded', () => {
                     // Remove any hash from URL to prevent auto-scrolling
                     if (window.location.hash) {
                         history.replaceState(null, null, window.location.pathname + window.location.search);
                     }
-                    // Scroll to top on page load
-                    window.scrollTo(0, 0);
+                    // Immediately navigate to home section
+                    const homeSection = document.getElementById('home');
+                    if (homeSection) {
+                        homeSection.scrollIntoView({ behavior: 'instant', block: 'start' });
+                    }
+                    // Ensure home page styling is applied
+                    document.body.classList.remove('scrolled');
+                });
+
+                window.addEventListener('load', () => {
+                    // Double-check position after full load
+                    const homeSection = document.getElementById('home');
+                    if (homeSection) {
+                        homeSection.scrollIntoView({ behavior: 'instant', block: 'start' });
+                    }
+                    // Ensure home page styling is applied
+                    document.body.classList.remove('scrolled');
                 });
 
                 // Prevent back/forward navigation from scrolling to wrong position
@@ -1220,8 +1235,10 @@
                 // Listen for scroll events
                 window.addEventListener('scroll', handleScroll);
                 
-                // Initial check on page load
-                handleScroll();
+                // Initial check on page load - ensure it starts with home format
+                setTimeout(() => {
+                    handleScroll();
+                }, 100);
 
         // Add more dynamic fairy dust particles
         function createFairyDust(element) {
