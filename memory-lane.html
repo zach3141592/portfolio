@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Memory Lane - Zachary Yu's Journey">
+    <meta name="author" content="Zachary Yu">
+    <meta name="theme-color" content="#000000">
+    
+    <title>Memory Lane - Zachary Yu</title>
+    <link rel="icon" type="image/png" href="/ZY.png">
+    <link rel="manifest" href="/manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            font-family: cursive;
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            font-family: cursive;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 4rem 0 3rem 0;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            width: 45%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 4px solid #000000;
+            z-index: 2;
+        }
+
+        .timeline-year {
+            color: #667eea;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-tag {
+            padding: 0.25rem 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .memories-section {
+            margin: 4rem 0;
+        }
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .memory-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .memory-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .memory-content {
+            padding: 1.5rem;
+        }
+
+        .memory-title {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .memory-date {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .memory-description {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 4rem;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+            
+            .timeline-icon {
+                left: 2rem;
+            }
+            
+            .memories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .back-button {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.75rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back to Forest</a>
+    
+    <div class="container">
+        <h1 class="page-title">Memory Lane</h1>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-title">Senior Developer Role</div>
+                    <div class="timeline-description">
+                        Promoted to Senior Full-Stack Developer, leading a team of 5 developers 
+                        on multiple enterprise projects. Implemented microservices architecture 
+                        and improved system performance by 40%.
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">Leadership</span>
+                        <span class="timeline-tag">Microservices</span>
+                        <span class="timeline-tag">Performance</span>
+                    </div>
+                </div>
+                <div class="timeline-icon">🚀</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-title">Full-Stack Mastery</div>
+                    <div class="timeline-description">
+                        Achieved full-stack proficiency by building my first complete 
+                        e-commerce platform. Learned advanced React patterns, Node.js 
+                        best practices, and database optimization techniques.
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">React</span>
+                        <span class="timeline-tag">Node.js</span>
+                        <span class="timeline-tag">E-commerce</span>
+                    </div>
+                </div>
+                <div class="timeline-icon">💻</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-title">Open Source Contributions</div>
+                    <div class="timeline-description">
+                        Started contributing to open source projects and built my first 
+                        npm package that gained 1000+ downloads. Learned the importance 
+                        of community collaboration and code quality.
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">Open Source</span>
+                        <span class="timeline-tag">NPM</span>
+                        <span class="timeline-tag">Community</span>
+                    </div>
+                </div>
+                <div class="timeline-icon">🌟</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-title">JavaScript Deep Dive</div>
+                    <div class="timeline-description">
+                        Transitioned from basic web development to modern JavaScript 
+                        frameworks. Mastered ES6+, async programming, and built my 
+                        first single-page applications.
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">JavaScript</span>
+                        <span class="timeline-tag">ES6+</span>
+                        <span class="timeline-tag">SPA</span>
+                    </div>
+                </div>
+                <div class="timeline-icon">⚡</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-title">First Professional Project</div>
+                    <div class="timeline-description">
+                        Landed my first professional web development role and built 
+                        my first client website. Learned the importance of deadlines, 
+                        client communication, and responsive design.
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">Professional</span>
+                        <span class="timeline-tag">Client Work</span>
+                        <span class="timeline-tag">Responsive</span>
+                    </div>
+                </div>
+                <div class="timeline-icon">🎯</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-title">The Beginning</div>
+                    <div class="timeline-description">
+                        Wrote my first "Hello World" program and built my first HTML page. 
+                        Discovered the magic of turning ideas into reality through code 
+                        and decided to pursue web development.
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">HTML</span>
+                        <span class="timeline-tag">CSS</span>
+                        <span class="timeline-tag">First Steps</span>
+                    </div>
+                </div>
+                <div class="timeline-icon">🌱</div>
+            </div>
+        </div>
+
+        <div class="memories-section">
+            <h3 style="text-align: center; margin-bottom: 2rem; color: #ffffff;">Special Memories</h3>
+            
+            <div class="memories-grid">
+                <div class="memory-card">
+                    <div class="memory-image">🏆</div>
+                    <div class="memory-content">
+                        <div class="memory-title">First Hackathon Win</div>
+                        <div class="memory-date">October 2021</div>
+                        <div class="memory-description">
+                            Won first place in a 48-hour hackathon with a team project 
+                            that solved local business inventory management. Great learning 
+                            experience in rapid prototyping and teamwork.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-image">🎓</div>
+                    <div class="memory-content">
+                        <div class="memory-title">Mentoring Journey</div>
+                        <div class="memory-date">2022 - Present</div>
+                        <div class="memory-description">
+                            Started mentoring junior developers and bootcamp students. 
+                            Nothing beats the joy of seeing someone write their first 
+                            working program or land their first tech job.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-image">🚢</div>
+                    <div class="memory-content">
+                        <div class="memory-title">First Production Deploy</div>
+                        <div class="memory-date">March 2020</div>
+                        <div class="memory-description">
+                            The nervousness and excitement of pushing code to production 
+                            for the first time. Learned about deployment pipelines, 
+                            monitoring, and the importance of testing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-image">💡</div>
+                    <div class="memory-content">
+                        <div class="memory-title">Eureka Moment</div>
+                        <div class="memory-date">August 2019</div>
+                        <div class="memory-description">
+                            Finally understood closures and async programming in JavaScript. 
+                            That "aha!" moment when everything clicked and programming 
+                            became less mysterious and more logical.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-image">🌐</div>
+                    <div class="memory-content">
+                        <div class="memory-title">First Website Live</div>
+                        <div class="memory-date">December 2018</div>
+                        <div class="memory-description">
+                            Seeing my first website go live on the internet was magical. 
+                            A simple portfolio site with basic HTML and CSS, but it felt 
+                            like I had conquered the world.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-image">📚</div>
+                    <div class="memory-content">
+                        <div class="memory-title">Learning Never Stops</div>
+                        <div class="memory-date">Always</div>
+                        <div class="memory-description">
+                            The journey continues every day. New frameworks, languages, 
+                            and technologies keep emerging. The key is staying curious 
+                            and never stopping the learning process.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

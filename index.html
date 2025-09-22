@@ -11,7 +11,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yoursite.com/">
-    <meta property="og:title" content="Zach's Portfolio - Full-Stack Developer">
+    <meta property="og:title" content="Zachary Yu">
     <meta property="og:description" content="Full-Stack Developer & Creative Problem Solver. Building exceptional digital experiences.">
     <meta property="og:image" content="/og-image.png">
 
@@ -22,8 +22,8 @@
     <meta property="twitter:description" content="Full-Stack Developer & Creative Problem Solver. Building exceptional digital experiences.">
     <meta property="twitter:image" content="/og-image.png">
 
-    <title>Zach's Portfolio - Full-Stack Developer</title>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <title>Zachary Yu</title>
+    <link rel="icon" type="image/png" href="/ZY.png">
     <link rel="manifest" href="/manifest.json">
     <style>
         * {
@@ -53,6 +53,7 @@
             font-weight: bold;
             font-family: cursive;
             color: #ffffff;
+            text-decoration: none;
             text-shadow: 
                 0 0 10px #fff,
                 0 0 20px #fff,
@@ -198,40 +199,148 @@
             }
         }
 
-        /* Bottom right corner image */
-        .corner-icon {
+        /* Lion icon and arrows container */
+        .lion-container {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 100;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .lion-container:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .corner-icon {
             width: 40px;
             height: 40px;
-            z-index: 100;
-            opacity: 0.7;
+            opacity: 0.95;
             transition: all 0.3s ease;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)) brightness(1.3);
         }
 
         .corner-icon:hover {
             opacity: 1;
             transform: scale(1.1);
-            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+            filter: drop-shadow(0 0 30px rgba(255, 255, 255, 1)) brightness(1.5);
+        }
+
+        .arrow-horizontal {
+            color: #ffffff;
+            font-size: 2rem;
+            opacity: 0.9;
+            text-shadow: 
+                0 0 15px rgba(255, 255, 255, 0.8),
+                0 0 25px rgba(255, 255, 255, 0.6),
+                0 0 35px rgba(255, 255, 255, 0.4);
+            animation: arrowPulse 2s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .arrow-horizontal:hover {
+            opacity: 1;
+            transform: scale(1.2);
+            text-shadow: 
+                0 0 20px rgba(255, 255, 255, 1),
+                0 0 30px rgba(255, 255, 255, 0.8),
+                0 0 40px rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes arrowPulse {
+            0%, 100% {
+                opacity: 0.9;
+                transform: scale(1);
+                text-shadow: 
+                    0 0 15px rgba(255, 255, 255, 0.8),
+                    0 0 25px rgba(255, 255, 255, 0.6),
+                    0 0 35px rgba(255, 255, 255, 0.4);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+                text-shadow: 
+                    0 0 20px rgba(255, 255, 255, 1),
+                    0 0 30px rgba(255, 255, 255, 0.8),
+                    0 0 40px rgba(255, 255, 255, 0.6);
+            }
         }
 
         @media (max-width: 768px) {
+            .lion-container {
+                bottom: 15px;
+                gap: 15px;
+            }
+            
             .corner-icon {
                 width: 35px;
                 height: 35px;
-                bottom: 15px;
-                right: 15px;
+            }
+            
+            .arrow-horizontal {
+                font-size: 1.5rem;
             }
         }
 
         @media (max-width: 480px) {
+            .lion-container {
+                bottom: 10px;
+                gap: 10px;
+            }
+            
             .corner-icon {
                 width: 30px;
                 height: 30px;
-                bottom: 10px;
-                right: 10px;
+            }
+            
+            .arrow-horizontal {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-logo {
+            display: block;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            transition: all 0.3s ease;
+            filter: brightness(1.1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+        }
+
+        .nav-logo img:hover {
+            transform: scale(1.1);
+            filter: brightness(1.3) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.75rem 1rem;
+            }
+            
+            .nav-logo img {
+                height: 35px;
             }
         }
 
@@ -495,8 +604,15 @@
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="/ZY.png" alt="ZY Logo">
+        </a>
+    </nav>
+
     <!-- Glowing text elements with fairy dust -->
-    <div id="resume" class="glowing-text">
+    <a href="resume.html" id="resume" class="glowing-text">
         Resume
         <div class="fairy-dust blue" style="top: -10px; left: -15px;"></div>
         <div class="fairy-dust green" style="top: -5px; right: -10px;"></div>
@@ -504,9 +620,9 @@
         <div class="fairy-dust yellow" style="top: 10px; right: 30px;"></div>
         <div class="fairy-dust purple" style="bottom: 5px; right: -5px;"></div>
         <div class="fairy-dust" style="top: -12px; left: 50px;"></div>
-    </div>
+    </a>
 
-    <div id="memory-lane" class="glowing-text">
+    <a href="memory-lane.html" id="memory-lane" class="glowing-text">
         Memory Lane
         <div class="fairy-dust pink" style="top: -8px; left: -20px;"></div>
         <div class="fairy-dust blue" style="top: 5px; right: -15px;"></div>
@@ -514,9 +630,9 @@
         <div class="fairy-dust green" style="top: -15px; right: 40px;"></div>
         <div class="fairy-dust purple" style="bottom: 8px; right: -8px;"></div>
         <div class="fairy-dust" style="top: 12px; left: -5px;"></div>
-    </div>
+    </a>
 
-    <div id="about" class="glowing-text">
+    <a href="about.html" id="about" class="glowing-text">
         About
         <div class="fairy-dust green" style="top: -12px; left: -10px;"></div>
         <div class="fairy-dust yellow" style="top: -8px; right: -12px;"></div>
@@ -524,9 +640,9 @@
         <div class="fairy-dust pink" style="top: 8px; right: 25px;"></div>
         <div class="fairy-dust purple" style="bottom: 10px; right: -10px;"></div>
         <div class="fairy-dust" style="top: -5px; left: 35px;"></div>
-    </div>
+    </a>
 
-    <div id="projects-bottom" class="glowing-text">
+    <a href="projects.html" id="projects-bottom" class="glowing-text">
         Projects
         <div class="fairy-dust purple" style="top: -10px; left: -18px;"></div>
         <div class="fairy-dust blue" style="top: -12px; right: -8px;"></div>
@@ -534,7 +650,7 @@
         <div class="fairy-dust yellow" style="top: 6px; right: 45px;"></div>
         <div class="fairy-dust pink" style="bottom: 5px; right: -12px;"></div>
         <div class="fairy-dust" style="top: -8px; left: 60px;"></div>
-    </div>
+    </a>
 
     <!-- Parchment paper with name -->
     <div class="parchment">
@@ -545,8 +661,12 @@
         <div class="parchment-text">Zachary Yu</div>
     </div>
 
-    <!-- Bottom right corner icon -->
-    <img src="https://cs.uwatering.com/icon.white.svg" alt="Icon" class="corner-icon">
+    <!-- Lion icon with horizontal arrows -->
+    <a href="https://cs.uwatering.com/" target="_blank" class="lion-container" title="Visit UWaterloo CS Webring">
+        <div class="arrow-horizontal">←</div>
+        <img src="https://cs.uwatering.com/icon.white.svg" alt="Lion Icon" class="corner-icon">
+        <div class="arrow-horizontal">→</div>
+    </a>
 
     <script>
 

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Zachary Yu - Full-Stack Developer">
+    <meta name="author" content="Zachary Yu">
+    <meta name="theme-color" content="#000000">
+    
+    <title>About - Zachary Yu</title>
+    <link rel="icon" type="image/png" href="/ZY.png">
+    <link rel="manifest" href="/manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            font-family: cursive;
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            font-family: cursive;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 4rem 0 3rem 0;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cccccc;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-placeholder {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            font-size: 6rem;
+        }
+
+        .skills-section {
+            margin: 4rem 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-category h4 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-name {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .experience-section {
+            margin: 4rem 0;
+        }
+
+        .experience-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .experience-title {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            color: #667eea;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-date {
+            color: #999999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-description {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .profile-placeholder {
+                width: 200px;
+                height: 200px;
+                font-size: 4rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .back-button {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.75rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back to Forest</a>
+    
+    <div class="container">
+        <h1 class="page-title">About Me</h1>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Hello! I'm Zachary Yu, a passionate full-stack developer with a love for 
+                    creating innovative digital solutions. I specialize in building responsive, 
+                    user-friendly applications that solve real-world problems.
+                </p>
+                <p>
+                    With expertise in modern web technologies and a keen eye for design, 
+                    I enjoy the entire development process - from initial concept and design 
+                    to implementation and deployment.
+                </p>
+                <p>
+                    When I'm not coding, you can find me exploring new technologies, 
+                    contributing to open-source projects, reading about emerging tech trends, 
+                    or enjoying the great outdoors.
+                </p>
+                
+                <h3>What I Do</h3>
+                <p>
+                    I create full-stack web applications, design user interfaces, 
+                    build RESTful APIs, implement databases, and ensure optimal 
+                    performance and security across all projects.
+                </p>
+            </div>
+            
+            <div class="about-image">
+                <div class="profile-placeholder">👨‍💻</div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h3 style="text-align: center; margin-bottom: 2rem; color: #ffffff;">Technical Skills</h3>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Frontend Development</h4>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript/TypeScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">React/Next.js</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Vue.js</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">CSS/Sass</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Backend Development</h4>
+                    <div class="skill-item">
+                        <span class="skill-name">Node.js</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 82%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 78%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Express/FastAPI</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">GraphQL</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Database & Tools</h4>
+                    <div class="skill-item">
+                        <span class="skill-name">MongoDB</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PostgreSQL</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Git/GitHub</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Docker</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 72%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="experience-section">
+            <h3 style="text-align: center; margin-bottom: 2rem; color: #ffffff;">Experience</h3>
+            
+            <div class="experience-item">
+                <div class="experience-title">Senior Full-Stack Developer</div>
+                <div class="experience-company">Tech Innovations Inc.</div>
+                <div class="experience-date">2022 - Present</div>
+                <div class="experience-description">
+                    Leading development of enterprise web applications, mentoring junior developers, 
+                    and implementing modern technologies to improve system performance and user experience.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Full-Stack Developer</div>
+                <div class="experience-company">Digital Solutions LLC</div>
+                <div class="experience-date">2020 - 2022</div>
+                <div class="experience-description">
+                    Developed and maintained multiple client websites and applications using React, 
+                    Node.js, and various databases. Collaborated with design teams to create 
+                    responsive and accessible user interfaces.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Frontend Developer</div>
+                <div class="experience-company">StartUp Ventures</div>
+                <div class="experience-date">2019 - 2020</div>
+                <div class="experience-description">
+                    Built responsive web applications and landing pages for various startup clients. 
+                    Focused on performance optimization and modern JavaScript frameworks.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
