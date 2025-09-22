@@ -1,0 +1,25 @@
+{
+  "name": "zach-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Zach's modern portfolio website",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {},
+  "keywords": [
+    "portfolio",
+    "developer",
+    "javascript",
+    "vite"
+  ],
+  "author": "Zach",
+  "license": "MIT"
+}

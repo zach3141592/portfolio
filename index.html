@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zach's portfolio - Full-Stack Developer & Creative Problem Solver. Showcasing modern web applications and innovative solutions.">
+    <meta name="keywords" content="developer, portfolio, full-stack, javascript, react, node.js, web development">
+    <meta name="author" content="Zach">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yoursite.com/">
+    <meta property="og:title" content="Zach's Portfolio - Full-Stack Developer">
+    <meta property="og:description" content="Full-Stack Developer & Creative Problem Solver. Building exceptional digital experiences.">
+    <meta property="og:image" content="/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yoursite.com/">
+    <meta property="twitter:title" content="Zach's Portfolio - Full-Stack Developer">
+    <meta property="twitter:description" content="Full-Stack Developer & Creative Problem Solver. Building exceptional digital experiences.">
+    <meta property="twitter:image" content="/og-image.png">
+
+    <title>Zach's Portfolio - Full-Stack Developer</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: cursive;
+        }
+        
+        body {
+            background-image: url('/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .glowing-text {
+            position: absolute;
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: cursive;
+            color: #ffffff;
+            text-shadow: 
+                0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 30px #4fc3f7,
+                0 0 40px #4fc3f7,
+                0 0 50px #4fc3f7,
+                0 0 60px #4fc3f7,
+                0 0 70px #4fc3f7;
+            animation: glow 2s ease-in-out infinite alternate;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .glowing-text:hover {
+            transform: scale(1.1);
+            text-shadow: 
+                0 0 15px #fff,
+                0 0 25px #fff,
+                0 0 35px #81c784,
+                0 0 45px #81c784,
+                0 0 55px #81c784,
+                0 0 65px #81c784,
+                0 0 75px #81c784;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 
+                    0 0 10px #fff,
+                    0 0 20px #fff,
+                    0 0 30px #4fc3f7,
+                    0 0 40px #4fc3f7,
+                    0 0 50px #4fc3f7,
+                    0 0 60px #4fc3f7,
+                    0 0 70px #4fc3f7;
+            }
+            to {
+                text-shadow: 
+                    0 0 20px #fff,
+                    0 0 30px #fff,
+                    0 0 40px #4fc3f7,
+                    0 0 50px #4fc3f7,
+                    0 0 60px #4fc3f7,
+                    0 0 70px #4fc3f7,
+                    0 0 80px #4fc3f7;
+            }
+        }
+
+        /* Position text elements around the background */
+        #projects {
+            top: 20%;
+            left: 15%;
+        }
+
+        #memory-lane {
+            top: 35%;
+            right: 20%;
+        }
+
+        #about {
+            bottom: 30%;
+            left: 10%;
+        }
+
+        #vibe-coding {
+            bottom: 15%;
+            right: 15%;
+        }
+
+        /* Fairy dust particles */
+        .fairy-dust {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #fff 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .fairy-dust:nth-child(1) { animation-delay: 0s; }
+        .fairy-dust:nth-child(2) { animation-delay: 0.5s; }
+        .fairy-dust:nth-child(3) { animation-delay: 1s; }
+        .fairy-dust:nth-child(4) { animation-delay: 1.5s; }
+        .fairy-dust:nth-child(5) { animation-delay: 2s; }
+        .fairy-dust:nth-child(6) { animation-delay: 2.5s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-20px) translateX(10px) scale(1.2);
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+        }
+
+        /* Different colors for fairy dust */
+        .fairy-dust.blue { background: radial-gradient(circle, #4fc3f7 0%, transparent 70%); }
+        .fairy-dust.green { background: radial-gradient(circle, #81c784 0%, transparent 70%); }
+        .fairy-dust.pink { background: radial-gradient(circle, #f48fb1 0%, transparent 70%); }
+        .fairy-dust.yellow { background: radial-gradient(circle, #fff176 0%, transparent 70%); }
+        .fairy-dust.purple { background: radial-gradient(circle, #ce93d8 0%, transparent 70%); }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .glowing-text {
+                font-size: 1.8rem;
+            }
+            
+            #projects {
+                top: 15%;
+                left: 10%;
+            }
+
+            #memory-lane {
+                top: 30%;
+                right: 10%;
+            }
+
+            #about {
+                bottom: 25%;
+                left: 5%;
+            }
+
+            #vibe-coding {
+                bottom: 10%;
+                right: 5%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .glowing-text {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Border fairy dust */
+        .border-fairy-dust {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #fff 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+            box-shadow: 0 0 10px #fff, 0 0 20px #4fc3f7;
+        }
+
+        .border-fairy-dust.large {
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 15px #fff, 0 0 25px #4fc3f7, 0 0 35px #4fc3f7;
+        }
+
+        .border-fairy-dust.small {
+            width: 3px;
+            height: 3px;
+            box-shadow: 0 0 8px #fff, 0 0 15px #4fc3f7;
+        }
+
+        /* Border fairy dust colors */
+        .border-fairy-dust.blue { 
+            background: radial-gradient(circle, #4fc3f7 0%, transparent 70%);
+            box-shadow: 0 0 10px #4fc3f7, 0 0 20px #4fc3f7;
+        }
+        .border-fairy-dust.green { 
+            background: radial-gradient(circle, #81c784 0%, transparent 70%);
+            box-shadow: 0 0 10px #81c784, 0 0 20px #81c784;
+        }
+        .border-fairy-dust.pink { 
+            background: radial-gradient(circle, #f48fb1 0%, transparent 70%);
+            box-shadow: 0 0 10px #f48fb1, 0 0 20px #f48fb1;
+        }
+        .border-fairy-dust.yellow { 
+            background: radial-gradient(circle, #fff176 0%, transparent 70%);
+            box-shadow: 0 0 10px #fff176, 0 0 20px #fff176;
+        }
+        .border-fairy-dust.purple { 
+            background: radial-gradient(circle, #ce93d8 0%, transparent 70%);
+            box-shadow: 0 0 10px #ce93d8, 0 0 20px #ce93d8;
+        }
+
+        /* Border animations */
+        @keyframes floatTop {
+            0% {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(calc(100vw + 20px));
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatBottom {
+            0% {
+                transform: translateX(calc(100vw + 20px));
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatLeft {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(calc(100vh + 20px));
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatRight {
+            0% {
+                transform: translateY(calc(100vh + 20px));
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+        }
+
+        .border-fairy-dust.top {
+            top: 20px;
+            animation: floatTop 8s linear infinite;
+        }
+
+        .border-fairy-dust.bottom {
+            bottom: 20px;
+            animation: floatBottom 8s linear infinite;
+        }
+
+        .border-fairy-dust.left {
+            left: 20px;
+            animation: floatLeft 8s linear infinite;
+        }
+
+        .border-fairy-dust.right {
+            right: 20px;
+            animation: floatRight 8s linear infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Glowing text elements with fairy dust -->
+    <div id="projects" class="glowing-text">
+        Projects
+        <div class="fairy-dust blue" style="top: -10px; left: -15px;"></div>
+        <div class="fairy-dust green" style="top: -5px; right: -10px;"></div>
+        <div class="fairy-dust pink" style="bottom: -8px; left: 20px;"></div>
+        <div class="fairy-dust yellow" style="top: 10px; right: 30px;"></div>
+        <div class="fairy-dust purple" style="bottom: 5px; right: -5px;"></div>
+        <div class="fairy-dust" style="top: -12px; left: 50px;"></div>
+    </div>
+
+    <div id="memory-lane" class="glowing-text">
+        Memory Lane
+        <div class="fairy-dust pink" style="top: -8px; left: -20px;"></div>
+        <div class="fairy-dust blue" style="top: 5px; right: -15px;"></div>
+        <div class="fairy-dust yellow" style="bottom: -10px; left: 30px;"></div>
+        <div class="fairy-dust green" style="top: -15px; right: 40px;"></div>
+        <div class="fairy-dust purple" style="bottom: 8px; right: -8px;"></div>
+        <div class="fairy-dust" style="top: 12px; left: -5px;"></div>
+    </div>
+
+    <div id="about" class="glowing-text">
+        About
+        <div class="fairy-dust green" style="top: -12px; left: -10px;"></div>
+        <div class="fairy-dust yellow" style="top: -8px; right: -12px;"></div>
+        <div class="fairy-dust blue" style="bottom: -5px; left: 15px;"></div>
+        <div class="fairy-dust pink" style="top: 8px; right: 25px;"></div>
+        <div class="fairy-dust purple" style="bottom: 10px; right: -10px;"></div>
+        <div class="fairy-dust" style="top: -5px; left: 35px;"></div>
+    </div>
+
+    <div id="vibe-coding" class="glowing-text">
+        Vibe Coding Corner
+        <div class="fairy-dust purple" style="top: -10px; left: -18px;"></div>
+        <div class="fairy-dust blue" style="top: -12px; right: -8px;"></div>
+        <div class="fairy-dust green" style="bottom: -8px; left: 25px;"></div>
+        <div class="fairy-dust yellow" style="top: 6px; right: 45px;"></div>
+        <div class="fairy-dust pink" style="bottom: 5px; right: -12px;"></div>
+        <div class="fairy-dust" style="top: -8px; left: 60px;"></div>
+    </div>
+
+    <script>
+
+        // Add more dynamic fairy dust particles
+        function createFairyDust(element) {
+            const colors = ['blue', 'green', 'pink', 'yellow', 'purple', ''];
+            
+            setInterval(() => {
+                const dust = document.createElement('div');
+                dust.className = 'fairy-dust ' + colors[Math.floor(Math.random() * colors.length)];
+                
+                // Random position around the text
+                const randomX = Math.random() * 200 - 100; // -100px to 100px
+                const randomY = Math.random() * 60 - 30;   // -30px to 30px
+                
+                dust.style.left = randomX + 'px';
+                dust.style.top = randomY + 'px';
+                dust.style.animationDuration = (Math.random() * 2 + 2) + 's'; // 2-4 seconds
+                
+                element.appendChild(dust);
+                
+                // Remove the particle after animation
+                setTimeout(() => {
+                    if (dust.parentNode) {
+                        dust.parentNode.removeChild(dust);
+                    }
+                }, 4000);
+            }, Math.random() * 1000 + 1000); // Every 1-2 seconds
+        }
+
+        // Create border fairy dust
+        function createBorderFairyDust() {
+            const colors = ['blue', 'green', 'pink', 'yellow', 'purple', ''];
+            const sizes = ['small', '', 'large'];
+            const borders = ['top', 'bottom', 'left', 'right'];
+            
+            setInterval(() => {
+                const dust = document.createElement('div');
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const size = sizes[Math.floor(Math.random() * sizes.length)];
+                const border = borders[Math.floor(Math.random() * borders.length)];
+                
+                dust.className = `border-fairy-dust ${color} ${size} ${border}`;
+                
+                // Add random animation delay
+                dust.style.animationDelay = Math.random() * 2 + 's';
+                dust.style.animationDuration = (Math.random() * 4 + 6) + 's'; // 6-10 seconds
+                
+                document.body.appendChild(dust);
+                
+                // Remove the particle after animation
+                setTimeout(() => {
+                    if (dust.parentNode) {
+                        dust.parentNode.removeChild(dust);
+                    }
+                }, 12000);
+            }, Math.random() * 800 + 400); // Every 0.4-1.2 seconds
+        }
+
+        // Create corner fairy dust clusters
+        function createCornerClusters() {
+            const corners = [
+                { top: '10px', left: '10px' },
+                { top: '10px', right: '10px' },
+                { bottom: '10px', left: '10px' },
+                { bottom: '10px', right: '10px' }
+            ];
+            
+            corners.forEach((corner, index) => {
+                setInterval(() => {
+                    for (let i = 0; i < 3; i++) {
+                        setTimeout(() => {
+                            const dust = document.createElement('div');
+                            const colors = ['blue', 'green', 'pink', 'yellow', 'purple', ''];
+                            const color = colors[Math.floor(Math.random() * colors.length)];
+                            
+                            dust.className = `border-fairy-dust ${color}`;
+                            dust.style.position = 'fixed';
+                            dust.style.zIndex = '5';
+                            
+                            // Position near corner with slight randomness
+                            Object.keys(corner).forEach(key => {
+                                dust.style[key] = corner[key];
+                            });
+                            
+                            // Add floating animation
+                            dust.style.animation = `float 4s ease-in-out infinite`;
+                            dust.style.animationDelay = i * 0.5 + 's';
+                            
+                            document.body.appendChild(dust);
+                            
+                            // Remove after animation
+                            setTimeout(() => {
+                                if (dust.parentNode) {
+                                    dust.parentNode.removeChild(dust);
+                                }
+                            }, 4000);
+                        }, i * 200);
+                    }
+                }, 3000 + index * 750); // Stagger corner animations
+            });
+        }
+
+        // Initialize fairy dust for each text element
+        document.addEventListener('DOMContentLoaded', () => {
+            const textElements = document.querySelectorAll('.glowing-text');
+            textElements.forEach(element => {
+                createFairyDust(element);
+            });
+            
+            // Start border fairy dust
+            createBorderFairyDust();
+            createCornerClusters();
+        });
+
+        // Add hover effects
+        document.querySelectorAll('.glowing-text').forEach(text => {
+            text.addEventListener('mouseenter', () => {
+                // Create burst of fairy dust on hover
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const dust = document.createElement('div');
+                        dust.className = 'fairy-dust ' + ['blue', 'green', 'pink', 'yellow', 'purple'][Math.floor(Math.random() * 5)];
+                        
+                        const randomX = Math.random() * 150 - 75;
+                        const randomY = Math.random() * 100 - 50;
+                        
+                        dust.style.left = randomX + 'px';
+                        dust.style.top = randomY + 'px';
+                        dust.style.animationDuration = '2s';
+                        
+                        text.appendChild(dust);
+                        
+                        setTimeout(() => {
+                            if (dust.parentNode) {
+                                dust.parentNode.removeChild(dust);
+                            }
+                        }, 2000);
+                    }, i * 100);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
