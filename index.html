@@ -91,6 +91,7 @@
             text-align: center;
             margin-bottom: 3rem;
             color: #ffffff;
+            font-family: cursive;
         }
 
         .section-content {
@@ -539,13 +540,13 @@
             }
         }
 
-        /* Show all 9 memories before looping */
+        /* Start memories from right side and scroll left */
         @keyframes scroll-horizontal {
             0% {
-                transform: translateX(0);
+                transform: translateX(100vw); /* Start from right side of viewport */
             }
             100% {
-                transform: translateX(-3168px); /* 9 cards * (350px width + 32px gap) = 3168px */
+                transform: translateX(-3168px); /* End after all 9 cards have passed */
             }
         }
 
@@ -920,27 +921,24 @@
                 </div>
                 
                 <div class="section-content" style="text-align: center;">
-                    <p style="margin-bottom: 1.5rem;">
-                        Hi! I'm Zachary Yu, a passionate full-stack developer with a love for 
-                        creating innovative digital solutions. I specialize in building responsive, 
-                        user-friendly applications that solve real-world problems.
+                    <p style="margin-bottom: 1.5rem; color: #ffffff; font-size: 1.2rem; font-weight: 500; line-height: 1.6; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); font-family: 'Times New Roman', serif;">
+                        I'm Zachary Yu. 
+                        <br>I love coding, building, people, basketball, and jazz.
                     </p>
-                    <p style="margin-bottom: 1.5rem;">
-                        With expertise in modern web technologies and a keen eye for design, 
-                        I enjoy the entire development process - from initial concept and design 
-                        to implementation and deployment.
+                    <p style="margin-bottom: 1.5rem; color: #ffffff; font-size: 1.1rem; font-weight: 400; line-height: 1.6; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); font-family: 'Times New Roman', serif;">
+                       I build full-stack web applications and ML models.  
                     </p>
-                    <p style="margin-bottom: 2rem;">
-                        When I'm not coding, you can find me exploring new technologies, 
-                        contributing to open-source projects, reading about emerging tech trends, 
-                        or enjoying the great outdoors.
+                    <p style="margin-bottom: 2rem; color: #ffffff; font-size: 1.1rem; font-weight: 400; line-height: 1.8; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); font-family: 'Times New Roman', serif;">
+                         <strong style="font-weight: 600;">RECENTLY:</strong>
+                         <br>- 3x Finalist in National Big Data Challenge
+                         <br>- Made an app with over 4K users
+                         <br>- Currently making <a href="https://vibeornot.com" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 500; font-family: 'Times New Roman', serif;">vibeornot.com</a>
+                         <br>- Currently making AI clones of everyone
                     </p>
                     
-                    <h3 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem;">What I Do</h3>
-                    <p>
-                        I create full-stack web applications, design user interfaces, 
-                        build RESTful APIs, implement databases, and ensure optimal 
-                        performance and security across all projects.
+                    <h3 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">GOALS</h3>
+                    <p style="color: #ffffff; font-size: 1.1rem; font-weight: 400; line-height: 1.6; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); font-family: 'Times New Roman', serif;">
+                        I want to make.
                     </p>
                 </div>
             </div>
@@ -956,14 +954,14 @@
                     <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">E-Commerce</div>
                     <div style="padding: 1.5rem;">
                         <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">E-Commerce Platform</h3>
-                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">
-                            A full-stack e-commerce solution built with React and Node.js, 
-                            featuring real-time inventory management and secure payments.
-                        </p>
+                         <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                             A full-stack e-commerce solution built with React and Node.js, 
+                             featuring real-time inventory management and secure payments.
+                         </p>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">React</span>
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">Node.js</span>
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">MongoDB</span>
+                         <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">React</span>
+                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Node.js</span>
+                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">MongoDB</span>
                         </div>
                     </div>
                 </div>
@@ -972,14 +970,14 @@
                     <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Task Manager</div>
                     <div style="padding: 1.5rem;">
                         <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Task Management App</h3>
-                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">
-                            A collaborative task management application with real-time updates, 
-                            drag-and-drop functionality, and team collaboration features.
-                        </p>
+                         <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                             A collaborative task management application with real-time updates, 
+                             drag-and-drop functionality, and team collaboration features.
+                         </p>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">Vue.js</span>
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">Firebase</span>
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">PWA</span>
+                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Vue.js</span>
+                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Firebase</span>
+                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">PWA</span>
                         </div>
                     </div>
                 </div>
@@ -988,14 +986,14 @@
                     <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Design System</div>
                     <div style="padding: 1.5rem;">
                         <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Design System Library</h3>
-                        <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem;">
-                            A comprehensive design system and component library for consistent 
-                            UI/UX across multiple applications and platforms.
-                        </p>
+                         <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                             A comprehensive design system and component library for consistent 
+                             UI/UX across multiple applications and platforms.
+                         </p>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">Storybook</span>
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">TypeScript</span>
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff;">Sass</span>
+                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Storybook</span>
+                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">TypeScript</span>
+                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Sass</span>
                         </div>
                     </div>
                 </div>
@@ -1012,7 +1010,7 @@
                     <div style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.5rem;">Senior Full-Stack Developer</div>
                     <div style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem;">Tech Innovations Inc.</div>
                     <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">2022 - Present</div>
-                    <div style="color: #ffffff; line-height: 1.6;">
+                    <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
                         Leading development of enterprise web applications, mentoring junior developers, 
                         and implementing modern technologies to improve system performance and user experience.
                     </div>
@@ -1022,7 +1020,7 @@
                     <div style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.5rem;">Full-Stack Developer</div>
                     <div style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem;">Digital Solutions LLC</div>
                     <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">2020 - 2022</div>
-                    <div style="color: #ffffff; line-height: 1.6;">
+                    <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
                         Developed and maintained multiple client websites and applications using React, 
                         Node.js, and various databases. Collaborated with design teams to create 
                         responsive and accessible user interfaces.
@@ -1033,7 +1031,7 @@
                     <div style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.5rem;">Frontend Developer</div>
                     <div style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem;">StartUp Ventures</div>
                     <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">2019 - 2020</div>
-                    <div style="color: #ffffff; line-height: 1.6;">
+                    <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
                         Built responsive web applications and landing pages for various startup clients. 
                         Focused on performance optimization and modern JavaScript frameworks.
                     </div>
@@ -1056,8 +1054,8 @@
                         <div style="padding: 1.5rem;">
                             <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Very Cool People</div>
                             <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Sept 2025</div>
-                            <div style="color: #ffffff; line-height: 1.6;">
-                                Got dinner with YC, got boba with Mintlify, met 
+                            <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
+                                Got dinner with YC, got boba with Mintlify, met other important people.
                                 Got inspired at Waterloo Tech Week.
                             </div>
                         </div>
@@ -1070,7 +1068,7 @@
                         <div style="padding: 1.5rem;">
                             <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">TerraHacks</div>
                             <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Aug 2025</div>
-                            <div style="color: #ffffff; line-height: 1.6;">
+                            <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
                                 Met some very cool people at TerraHacks. 
                                 Made tinder for finding medical trial / volunteer participants.
                             </div>
@@ -1084,7 +1082,7 @@
                         <div style="padding: 1.5rem;">
                             <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">UW Mafia</div>
                             <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Sept 2025</div>
-                            <div style="color: #ffffff; line-height: 1.6;">
+                            <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
                                 Met cracked people who I can't believe are my age.
                                 Got invited to Akatose hacker house.
                             </div>
@@ -1098,7 +1096,7 @@
                         <div style="padding: 1.5rem;">
                             <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Winning at HammerHacks</div>
                             <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Nov 2024</div>
-                            <div style="color: #ffffff; line-height: 1.6;">
+                            <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
                                 Won HammerHacks with some good friends.
                                 Made people laugh during the pitch.
                             </div>
@@ -1112,7 +1110,7 @@
                         <div style="padding: 1.5rem;">
                             <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Winning at SolutionHacks</div>
                             <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">July 2025</div>
-                            <div style="color: #ffffff; line-height: 1.6;">
+                            <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
                                 Won SolutionHacks during my first solo hackathon.
                                 Ate a lot of food.
                             </div>
@@ -1126,7 +1124,7 @@
                         <div style="padding: 1.5rem;">
                             <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Big Data Challenge National Finals</div>
                             <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Feb 2025</div>
-                            <div style="color: #ffffff; line-height: 1.6;">
+                            <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
                                 Went to the Big Data Challenge National Finals for the 3rd time.
                                 Published an ML paper with some good people.
                             </div>
@@ -1141,7 +1139,7 @@
                         <div style="padding: 1.5rem;">
                             <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Locked In</div>
                             <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">Sept 2025</div>
-                            <div style="color: #ffffff; line-height: 1.6;">
+                            <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
                                 Normal dinner with waterloo cs kids.
                             </div>
                         </div>
@@ -1154,7 +1152,7 @@
                         <div style="padding: 1.5rem;">
                             <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Graduation</div>
                             <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">June 2025</div>
-                            <div style="color: #ffffff; line-height: 1.6;">
+                            <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
                                 Walked on stage. Won awards.
                                 Made parents proud.
                             </div>
@@ -1168,9 +1166,8 @@
                         <div style="padding: 1.5rem;">
                             <div style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.5rem;">Piano </div>
                             <div style="color: #ffffff; font-size: 0.9rem; margin-bottom: 1rem;">March 2008</div>
-                            <div style="color: #ffffff; line-height: 1.6;">
+                            <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
                                 Touched a piano for the first time.
-                                Met a life long friend.
                             </div>
                         </div>
                     </div>
