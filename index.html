@@ -23,7 +23,7 @@
     <meta property="twitter:image" content="/og-image.png">
 
     <title>Zachary Yu</title>
-    <link rel="icon" type="image/png" href="/ZY.png">
+    <link rel="icon" type="image/png" href="/yu.png">
     <link rel="manifest" href="/manifest.json">
     <style>
         * {
@@ -39,7 +39,7 @@
         body {
             min-height: 100vh;
             overflow-x: hidden;
-            font-family: cursive;
+            font-family: 'Times New Roman', serif;
             padding-top: 80px;
             background-image: url('/background.jpg');
             background-size: cover;
@@ -91,7 +91,7 @@
             text-align: center;
             margin-bottom: 3rem;
             color: #ffffff;
-            font-family: cursive;
+            font-family: 'Times New Roman', serif;
         }
 
         .section-content {
@@ -104,7 +104,7 @@
             position: absolute;
             font-size: 2.5rem;
             font-weight: bold;
-            font-family: cursive;
+            font-family: 'Times New Roman', serif;
             color: #ffffff;
             text-decoration: none;
             text-shadow: 
@@ -325,6 +325,18 @@
             }
         }
 
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
         @media (max-width: 768px) {
             .lion-container {
                 bottom: 100px;
@@ -425,12 +437,10 @@
             height: 40px;
             width: auto;
             transition: all 0.3s ease;
-            filter: brightness(1.1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
         }
 
         .nav-logo img:hover {
             transform: scale(1.1);
-            filter: brightness(1.3) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
         }
 
         .nav-menu {
@@ -444,7 +454,7 @@
         .nav-link {
             color: #ffffff;
             text-decoration: none;
-            font-family: cursive;
+            font-family: 'Times New Roman', serif;
             font-weight: 700;
             font-size: 1.1rem;
             transition: all 0.3s ease;
@@ -631,7 +641,7 @@
         }
 
         .parchment-text {
-            font-family: cursive;
+            font-family: 'Times New Roman', serif;
             font-size: 1.8rem;
             font-weight: bold;
             color: #000000;
@@ -838,20 +848,20 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar" style="transform: translateY(-100%); transition: transform 0.3s ease;">
         <div class="nav-container">
             <a href="index.html" class="nav-logo" style="display: flex; align-items: center; gap: 12px;">
-                <img src="/ZY.png" alt="ZY Logo">
-                <span style="color: #ffffff; font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; font-family: cursive;">유진영</span>
+                <img src="/hangul.png" alt="Hangul Logo">
+                <span style="color: #ffffff; font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; font-family: 'Times New Roman', serif;">Zachary Yu</span>
             </a>
             
             <div class="nav-center">
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#me" class="nav-link">Me</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#experiences" class="nav-link">Hiring</a></li>
-                    <li><a href="#memories" class="nav-link">Memories</a></li>
+                    <li><a href="#home" class="nav-link">HOME</a></li>
+                    <li><a href="#me" class="nav-link">ME</a></li>
+                    <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+                    <li><a href="#experiences" class="nav-link">HIRING</a></li>
+                    <li><a href="#memories" class="nav-link">MEMORIES</a></li>
                 </ul>
             </div>
             
@@ -889,9 +899,15 @@
     <!-- Home Section -->
     <section id="home" class="section" style="position: relative; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin-top: -80px; padding-top: 80px;">
         <div class="container" style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center;">
-            <!-- Name text -->
-            <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-                <h1 style="color: #ffffff; font-size: 4rem; font-weight: 700; margin: 0; letter-spacing: 0.1em; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2); font-family: cursive; animation: animate-into-place 2.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);">ZACHARY YU</h1>
+            
+            <!-- Scroll to Start -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <div style="color: #ffffff; font-family: 'Times New Roman', serif; font-size: 2rem; font-weight: 600; margin-bottom: 1.5rem; opacity: 1; letter-spacing: 0.1em; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
+                    SCROLL TO START
+                </div>
+                <div style="color: #ffffff; font-size: 3rem; animation: bounce 1.5s infinite; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
+                    ↓
+                </div>
             </div>
             
             <!-- Lion icon with horizontal arrows -->
@@ -1180,7 +1196,7 @@
     <!-- Footer -->
     <footer style="background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 2rem 0; margin-top: 4rem; position: relative; z-index: 1002;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center;">
-            <p style="color: #ffffff; font-family: cursive; font-size: 1rem; margin: 0; opacity: 1; font-weight: 700;">
+            <p style="color: #ffffff; font-family: 'Times New Roman', serif; font-size: 1rem; margin: 0; opacity: 1; font-weight: 700;">
                 2025. Made by Zachary Yu.
             </p>
         </div>
@@ -1393,6 +1409,21 @@
                     }, i * 100);
                 }
             });
+        });
+
+        // Navbar scroll behavior
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const homeSection = document.getElementById('home');
+            const homeSectionHeight = homeSection.offsetHeight;
+            
+            if (window.scrollY > homeSectionHeight * 0.9) {
+                // Show navbar when scrolled past 90% of home section
+                navbar.style.transform = 'translateY(0)';
+            } else {
+                // Hide navbar when in home section
+                navbar.style.transform = 'translateY(-100%)';
+            }
         });
     </script>
 </body>
