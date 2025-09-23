@@ -560,6 +560,16 @@
             }
         }
 
+        /* Projects horizontal scroll animation */
+        @keyframes scroll-projects {
+            0% {
+                transform: translateX(100vw); /* Start from right side of viewport */
+            }
+            100% {
+                transform: translateX(-2970px); /* End after all 8 project cards have passed */
+            }
+        }
+
         /* Zachary Yu animate into place */
         @keyframes animate-into-place {
             0% {
@@ -578,6 +588,11 @@
 
         /* Memories container */
         .memories-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        /* Projects container */
+        .projects-scroll:hover {
             animation-play-state: paused;
         }
 
@@ -860,7 +875,7 @@
                     <li><a href="#home" class="nav-link">HOME</a></li>
                     <li><a href="#me" class="nav-link">ME</a></li>
                     <li><a href="#projects" class="nav-link">PROJECTS</a></li>
-                    <li><a href="#experiences" class="nav-link">HIRING</a></li>
+                    <li><a href="#experiences" class="nav-link">EXPERIENCE</a></li>
                     <li><a href="#memories" class="nav-link">MEMORIES</a></li>
                 </ul>
             </div>
@@ -965,53 +980,137 @@
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
-                <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
-                    <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">E-Commerce</div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">E-Commerce Platform</h3>
-                         <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                             A full-stack e-commerce solution built with React and Node.js, 
-                             featuring real-time inventory management and secure payments.
-                         </p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                         <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">React</span>
-                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Node.js</span>
-                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">MongoDB</span>
+            <div style="overflow-x: auto; overflow-y: hidden; padding: 2rem 0; margin: 0 -2rem;">
+                <div class="projects-scroll" style="display: flex; gap: 2rem; padding: 0 2rem; width: max-content; animation: scroll-projects 20s linear infinite;">
+                    
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">E-Commerce</div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">E-Commerce Platform</h3>
+                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                 A full-stack e-commerce solution built with React and Node.js, 
+                                 featuring real-time inventory management and secure payments.
+                             </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">React</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Node.js</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">MongoDB</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
-                    <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Task Manager</div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Task Management App</h3>
-                         <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                             A collaborative task management application with real-time updates, 
-                             drag-and-drop functionality, and team collaboration features.
-                         </p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Vue.js</span>
-                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Firebase</span>
-                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">PWA</span>
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Task Manager</div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Task Management App</h3>
+                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                 A collaborative task management application with real-time updates, 
+                                 drag-and-drop functionality, and team collaboration features.
+                             </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Vue.js</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Firebase</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">PWA</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
-                    <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Design System</div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Design System Library</h3>
-                         <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                             A comprehensive design system and component library for consistent 
-                             UI/UX across multiple applications and platforms.
-                         </p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Storybook</span>
-                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">TypeScript</span>
-                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Sass</span>
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Design System</div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Design System Library</h3>
+                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                 A comprehensive design system and component library for consistent 
+                                 UI/UX across multiple applications and platforms.
+                             </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Storybook</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">TypeScript</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Sass</span>
+                            </div>
                         </div>
                     </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">AI Chat Bot</div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">AI-Powered Chat Bot</h3>
+                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                 An intelligent chatbot using OpenAI GPT models with natural language processing,
+                                 context awareness, and integration with multiple platforms.
+                             </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Python</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">OpenAI</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">FastAPI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Crypto Tracker</div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Cryptocurrency Tracker</h3>
+                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                 Real-time cryptocurrency portfolio tracker with price alerts,
+                                 technical analysis, and automated trading capabilities.
+                             </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">React</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">WebSockets</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #00cec9 0%, #55a3ff 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Weather App</div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Weather Forecast App</h3>
+                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                 Beautiful weather application with location-based forecasts,
+                                 interactive maps, and severe weather alerts.
+                             </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Swift</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">CoreLocation</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">MapKit</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Recipe App</div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Recipe Discovery App</h3>
+                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                 AI-powered recipe recommendation app with ingredient scanning,
+                                 nutritional analysis, and meal planning features.
+                             </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Flutter</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">TensorFlow</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Camera API</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Music Player</div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #ffffff;">Smart Music Player</h3>
+                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                 Advanced music player with AI-powered recommendations,
+                                 mood-based playlists, and social sharing features.
+                             </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">React Native</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Spotify API</span>
+                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">ML.NET</span>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -1020,37 +1119,35 @@
     <!-- Exployability Section -->
     <section id="experiences" class="section">
         <div class="container">
-            <h2 class="section-title">Hiring</h2>
+            <h2 class="section-title">Experience</h2>
             <div class="section-content">
                 <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2rem; margin: 2rem 0; border: 1px solid rgba(255, 255, 255, 0.2);">
-                    <div style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.5rem;">I Ship Fast</div>
-                    <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
-                        I turn ideas into working products quickly. No endless meetings or overthinking - 
-                        just clean code and results that users actually want to use.
+                    <div style="color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Full-Stack Developer</div>
+                    <div style="color: #667eea; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 500;">2022 - Present</div>
+                    <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif; margin-bottom: 1rem;">
+                        Building modern web applications and AI-powered solutions. Led development of multiple 
+                        projects from concept to deployment, including an app that reached over 4,000 users.
+                    </div>
+                    <div style="color: #cccccc; font-size: 0.95rem; line-height: 1.5; font-family: 'Times New Roman', serif;">
+                        • Developed full-stack applications using React, Node.js, and MongoDB<br>
+                        • Implemented AI/ML features using TensorFlow and OpenAI APIs<br>
+                        • 3x National Big Data Challenge finalist<br>
+                        • Won multiple hackathons for innovative technical solutions
                     </div>
                 </div>
 
                 <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2rem; margin: 2rem 0; border: 1px solid rgba(255, 255, 255, 0.2);">
-                    <div style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.5rem;">I Win Hackathons</div>
-                    <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
-                        3x National Big Data Challenge finalist, multiple hackathon winner. 
-                        I thrive under pressure and deliver innovative solutions when it matters most.
+                    <div style="color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Founding Software Engineer</div>
+                    <div style="color: #667eea; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 500;">Hands • June 2025 - August 2025</div>
+                    <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif; margin-bottom: 1rem;">
+                        Early-stage startup focused on innovative technology solutions. Contributed to foundational 
+                        architecture and product development as one of the first engineering hires.
                     </div>
-                </div>
-
-                <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2rem; margin: 2rem 0; border: 1px solid rgba(255, 255, 255, 0.2);">
-                    <div style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.5rem;">I Build What Users Want</div>
-                    <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
-                        I've built apps with 4K+ users. I understand what makes products stick 
-                        and how to create experiences that people actually enjoy using.
-                    </div>
-                </div>
-
-                <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2rem; margin: 2rem 0; border: 1px solid rgba(255, 255, 255, 0.2);">
-                    <div style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.5rem;">I'm Always Learning</div>
-                    <div style="color: #ffffff; line-height: 1.6; font-family: 'Times New Roman', serif;">
-                        Currently building AI clones and vibeornot.com. I stay ahead of trends 
-                        and bring fresh ideas that keep your team at the cutting edge.
+                    <div style="color: #cccccc; font-size: 0.95rem; line-height: 1.5; font-family: 'Times New Roman', serif;">
+                        • Built core product features from ground up<br>
+                        • Established engineering best practices and development workflows<br>
+                        • Collaborated directly with founders on product strategy<br>
+                        • Rapid prototyping and iterative development in startup environment
                     </div>
                 </div>
             </div>
