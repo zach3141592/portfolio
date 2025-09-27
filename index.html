@@ -57,14 +57,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0);
+            background: rgba(0, 0, 0, 0.4);
             pointer-events: none;
             z-index: 1;
             transition: background 0.3s ease;
         }
 
         body.scrolled::before {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.8);
         }
 
         /* Section styling */
@@ -1112,52 +1112,105 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
                     
                     <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">ML Healthcare</div>
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Education</div>
                         <div style="padding: 1.5rem;">
-                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Machine Learning in Healthcare Data Analysis</h3>
-                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">IEEE Conference 2024</div>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">
+                                <a href="https://drive.google.com/drive/folders/1zX3kgoCvLt0uDiauawbe96QJSBA2SRLm" target="_blank" style="color: #ffffff; text-decoration: none; font-family: 'Times New Roman', serif;">Optimizing Budget Allocations in Ontario School Boards</a>
+                            </h3>
+                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">STEM Fellowship Journal • Feb 2025</div>
                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                                Research on optimizing machine learning algorithms for healthcare data analysis,
-                                focusing on improving diagnostic accuracy while reducing computational complexity.
+                                Research on optimizing budget allocations in Ontario school boards for efficient, 
+                                equitable, and inclusive education through data-driven analysis and policy recommendations.
                             </p>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Python</span>
-                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">TensorFlow</span>
-                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Pandas</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Data Analysis</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Policy Research</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Education</span>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <a href="https://journal.stemfellowship.org/doi/abs/10.17975/sfj-2025-001" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: 500; font-family: 'Times New Roman', serif; display: flex; align-items: center; gap: 0.5rem;">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                        <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                    </svg>
+                                    Publication
+                                </a>
+                                <a href="https://drive.google.com/file/d/10X_ivT-VyaRtr6wbOog_6s9-T5ikxkSG/view?usp=sharing" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: 500; font-family: 'Times New Roman', serif; display: flex; align-items: center; gap: 0.5rem;">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2z"/>
+                                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+                                    </svg>
+                                    Paper
+                                </a>
                             </div>
                         </div>
                     </div>
 
                     <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">NLP Research</div>
+                        <div style="height: 200px; background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Biodiversity</div>
                         <div style="padding: 1.5rem;">
-                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Neural Networks for Natural Language Processing</h3>
-                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">ACL Conference 2024</div>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">
+                                <a href="https://drive.google.com/drive/folders/1zX3kgoCvLt0uDiauawbe96QJSBA2SRLm" target="_blank" style="color: #ffffff; text-decoration: none; font-family: 'Times New Roman', serif;">Spatial Analysis of Plant Species and Biological Variety</a>
+                            </h3>
+                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">STEM Fellowship Journal • May 2024</div>
                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                                Comparative study of transformer architectures for multilingual NLP tasks,
-                                including novel attention mechanisms and performance optimizations.
+                                Utilizing spatial analysis to identify correlations between plant species and biological variety 
+                                to determine traits that foster biodiversity in ecosystems.
                             </p>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">PyTorch</span>
-                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Transformers</span>
-                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">BERT</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Spatial Analysis</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Ecology</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">GIS</span>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <a href="https://journal.stemfellowship.org/doi/abs/10.17975/sfj-2024-004" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: 500; font-family: 'Times New Roman', serif; display: flex; align-items: center; gap: 0.5rem;">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                        <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                    </svg>
+                                    Publication
+                                </a>
+                                <a href="https://drive.google.com/file/d/1omErxNzA-pvajqqfBwzu6Yr57M0tgmPH/view?usp=sharing" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: 500; font-family: 'Times New Roman', serif; display: flex; align-items: center; gap: 0.5rem;">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2z"/>
+                                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+                                    </svg>
+                                    Paper
+                                </a>
                             </div>
                         </div>
                     </div>
 
                     <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Blockchain</div>
+                        <div style="height: 200px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Sustainability</div>
                         <div style="padding: 1.5rem;">
-                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Blockchain-Based Identity Management Systems</h3>
-                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">ICBC Conference 2024</div>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">
+                                <a href="https://drive.google.com/drive/folders/1zX3kgoCvLt0uDiauawbe96QJSBA2SRLm" target="_blank" style="color: #ffffff; text-decoration: none; font-family: 'Times New Roman', serif;">Housing Factors and Life Satisfaction for Sustainable Living</a>
+                            </h3>
+                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">STEM Fellowship Journal • Apr 2023</div>
                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                                Research paper exploring the implementation of blockchain technology for secure identity management
-                                in distributed systems, focusing on privacy preservation and scalability challenges.
+                                Investigating the correlation between various housing factors and life satisfaction 
+                                to build a model for sustainable living and improved quality of life.
                             </p>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Solidity</span>
-                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Web3.js</span>
-                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Cryptography</span>
+                            <div style="display: flex; flex-wrap: nowrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Statistical Analysis</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Urban Planning</span>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <a href="https://journal.stemfellowship.org/doi/abs/10.17975/sfj-2023-002" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: 500; font-family: 'Times New Roman', serif; display: flex; align-items: center; gap: 0.5rem;">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                        <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                    </svg>
+                                    Publication
+                                </a>
+                                <a href="https://drive.google.com/file/d/15uWbV2i8jIOxM05F7IdQ0gP7XUnmQled/view?usp=sharing" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: 500; font-family: 'Times New Roman', serif; display: flex; align-items: center; gap: 0.5rem;">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2z"/>
+                                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+                                    </svg>
+                                    Paper
+                                </a>
                             </div>
                         </div>
                     </div>
