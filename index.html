@@ -560,15 +560,6 @@
             }
         }
 
-        /* Projects horizontal scroll animation */
-        @keyframes scroll-projects {
-            0% {
-                transform: translateX(100vw); /* Start from right side of viewport */
-            }
-            100% {
-                transform: translateX(-2970px); /* End after all 8 project cards have passed */
-            }
-        }
 
         /* Zachary Yu animate into place */
         @keyframes animate-into-place {
@@ -591,10 +582,6 @@
             animation-play-state: paused;
         }
 
-        /* Projects container */
-        .projects-scroll:hover {
-            animation-play-state: paused;
-        }
 
         /* Hide scrollbar */
         .memories-container::-webkit-scrollbar {
@@ -980,55 +967,31 @@
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
-            <div style="overflow-x: auto; overflow-y: hidden; padding: 2rem 0; margin: 0 -2rem;">
-                <div class="projects-scroll" style="display: flex; gap: 2rem; padding: 0 2rem; width: max-content; animation: scroll-projects 40s linear infinite;">
+            
+            <!-- Projects -->
+            <div style="margin-bottom: 4rem;">
+                <h3 style="font-size: 2rem; font-weight: 600; color: #ffffff; margin-bottom: 2rem; text-align: center; position: relative; padding-bottom: 1rem; font-family: 'Times New Roman', serif;">
+                    Projects
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
                     
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                            <img src="/projects/Hammer.png" alt="NoRot" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
-                        </div>
-                        <div style="padding: 1.5rem;">
-                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">
-                                <a href="https://github.com/zach3141592/HammerHacks2024" target="_blank" style="color: #ffffff; text-decoration: none; font-family: 'Times New Roman', serif;">NoRot</a>
-                            </h3>
-                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">November 2024</div>
-                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                                 A Chrome extension designed to help young internet users break free from "brainrot" content 
-                                 and develop more meaningful communication patterns online.
-                             </p>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                             <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">JavaScript</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Python</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">OpenAI API</span>
-                            </div>
-                            <div style="display: flex; gap: 1rem;">
-                                <a href="https://github.com/zach3141592/HammerHacks2024" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: 500; font-family: 'Times New Roman', serif; display: flex; align-items: center; gap: 0.5rem;">
-                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                                    </svg>
-                                    GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
                         <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                             <img src="/projects/medispense.png" alt="Medispense" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
                         </div>
                         <div style="padding: 1.5rem;">
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">
-                                <a href="https://github.com/zach3141592/UTRAHacks2025" target="_blank" style="color: #ffffff; text-decoration: none; font-family: 'Times New Roman', serif;">Medispense</a>
+                                <a href="https://github.com/zach3141592/UTRAHacks2025" target="_blank" style="color: #ffffff; text-decoration: none; font-family: 'Times New Roman', serif;">Medispense - UTRAHacks 2025</a>
                             </h3>
-                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">February 2025</div>
-                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                                 A comprehensive healthcare solution with Arduino hardware, iOS app, and cloud backend 
-                                 for smart medication dispensing and patient management.
-                             </p>
+                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">February 2025 • Winner</div>
+                            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                A comprehensive healthcare solution with Arduino hardware, iOS app, and cloud backend 
+                                for smart medication dispensing and patient management.
+                            </p>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">TypeScript</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Python</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">C++</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">TypeScript</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Python</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">C++</span>
                             </div>
                             <div style="display: flex; gap: 1rem;">
                                 <a href="https://github.com/zach3141592/UTRAHacks2025" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: 500; font-family: 'Times New Roman', serif; display: flex; align-items: center; gap: 0.5rem;">
@@ -1041,110 +1004,167 @@
                         </div>
                     </div>
 
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <img src="/projects/Hammer.png" alt="NoRot" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">
+                                <a href="https://github.com/zach3141592/HammerHacks2024" target="_blank" style="color: #ffffff; text-decoration: none; font-family: 'Times New Roman', serif;">NoRot - HammerHacks 2024</a>
+                            </h3>
+                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">November 2024 • Winner</div>
+                            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                A Chrome extension designed to help young internet users break free from "brainrot" content 
+                                and develop more meaningful communication patterns online.
+                            </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">JavaScript</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Python</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">OpenAI API</span>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <a href="https://github.com/zach3141592/HammerHacks2024" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: 500; font-family: 'Times New Roman', serif; display: flex; align-items: center; gap: 0.5rem;">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
                         <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Design System</div>
                         <div style="padding: 1.5rem;">
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Design System Library</h3>
                             <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">March 2024</div>
-                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                                 A comprehensive design system and component library for consistent 
-                                 UI/UX across multiple applications and platforms.
-                             </p>
+                            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                A comprehensive design system and component library for consistent 
+                                UI/UX across multiple applications and platforms.
+                            </p>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Storybook</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">TypeScript</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Sass</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Storybook</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">TypeScript</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Sass</span>
                             </div>
                         </div>
                     </div>
 
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">AI Chat Bot</div>
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #00cec9 0%, #55a3ff 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">EcoTrack</div>
                         <div style="padding: 1.5rem;">
-                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">AI-Powered Chat Bot</h3>
-                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">August 2024</div>
-                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                                 An intelligent chatbot using OpenAI GPT models with natural language processing,
-                                 context awareness, and integration with multiple platforms.
-                             </p>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">EcoTrack - TerraHacks 2024</h3>
+                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">October 2024 • Top 3</div>
+                            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                Environmental impact tracking application that helps users monitor their carbon footprint,
+                                set sustainability goals, and connect with eco-friendly initiatives.
+                            </p>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Python</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">OpenAI</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">FastAPI</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Next.js</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">PostgreSQL</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Maps API</span>
                             </div>
                         </div>
                     </div>
 
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
                         <div style="height: 200px; background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Crypto Tracker</div>
                         <div style="padding: 1.5rem;">
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Cryptocurrency Tracker</h3>
                             <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">January 2024</div>
-                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                                 Real-time cryptocurrency portfolio tracker with price alerts,
-                                 technical analysis, and automated trading capabilities.
-                             </p>
+                            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                Real-time cryptocurrency portfolio tracker with price alerts,
+                                technical analysis, and automated trading capabilities.
+                            </p>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">React</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">WebSockets</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Chart.js</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">React</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">WebSockets</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Chart.js</span>
                             </div>
                         </div>
                     </div>
 
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #00cec9 0%, #55a3ff 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Weather App</div>
-                        <div style="padding: 1.5rem;">
-                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Weather Forecast App</h3>
-                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">September 2023</div>
-                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                                 Beautiful weather application with location-based forecasts,
-                                 interactive maps, and severe weather alerts.
-                             </p>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Swift</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">CoreLocation</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">MapKit</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <div style="height: 200px; background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Recipe App</div>
-                        <div style="padding: 1.5rem;">
-                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Recipe Discovery App</h3>
-                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">June 2023</div>
-                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                                 AI-powered recipe recommendation app with ingredient scanning,
-                                 nutritional analysis, and meal planning features.
-                             </p>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Flutter</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">TensorFlow</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Camera API</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="flex: none; width: 350px; background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
                         <div style="height: 200px; background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Music Player</div>
                         <div style="padding: 1.5rem;">
                             <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Smart Music Player</h3>
                             <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">December 2023</div>
-                             <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
-                                 Advanced music player with AI-powered recommendations,
-                                 mood-based playlists, and social sharing features.
-                             </p>
+                            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                Advanced music player with AI-powered recommendations,
+                                mood-based playlists, and social sharing features.
+                            </p>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">React Native</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Spotify API</span>
-                                 <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">ML.NET</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">React Native</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Spotify API</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">ML.NET</span>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
+
+            <!-- Research Papers -->
+            <div style="margin-bottom: 4rem;">
+                <h3 style="font-size: 2rem; font-weight: 600; color: #ffffff; margin-bottom: 2rem; text-align: center; position: relative; padding-bottom: 1rem; font-family: 'Times New Roman', serif;">
+                    Research Papers
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">ML Healthcare</div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Machine Learning in Healthcare Data Analysis</h3>
+                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">IEEE Conference 2024</div>
+                            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                Research on optimizing machine learning algorithms for healthcare data analysis,
+                                focusing on improving diagnostic accuracy while reducing computational complexity.
+                            </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Python</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">TensorFlow</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Pandas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">NLP Research</div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Neural Networks for Natural Language Processing</h3>
+                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">ACL Conference 2024</div>
+                            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                Comparative study of transformer architectures for multilingual NLP tasks,
+                                including novel attention mechanisms and performance optimizations.
+                            </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">PyTorch</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Transformers</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">BERT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="height: 200px; background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #ffffff; font-weight: bold;">Blockchain</div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Blockchain-Based Identity Management Systems</h3>
+                            <div style="color: #cccccc; font-size: 0.9rem; margin-bottom: 1rem; font-family: 'Times New Roman', serif;">ICBC Conference 2024</div>
+                            <p style="color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; font-family: 'Times New Roman', serif;">
+                                Research paper exploring the implementation of blockchain technology for secure identity management
+                                in distributed systems, focusing on privacy preservation and scalability challenges.
+                            </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Solidity</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Web3.js</span>
+                                <span style="padding: 0.25rem 0.75rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; font-size: 0.85rem; color: #ffffff; font-family: 'Times New Roman', serif;">Cryptography</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
         </div>
     </section>
 
@@ -1557,3 +1577,4 @@
     </script>
 </body>
 </html>
+

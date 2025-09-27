@@ -25,6 +25,7 @@
             background-color: #000000;
             color: #ffffff;
             overflow-x: hidden;
+            scroll-behavior: auto;
         }
 
         .container {
@@ -151,6 +152,39 @@
             background: rgba(102, 126, 234, 0.1);
         }
 
+        /* Project Category Styles */
+        .project-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         @media (max-width: 768px) {
             .page-title {
                 font-size: 2.5rem;
@@ -174,143 +208,237 @@
     <div class="container">
         <h1 class="page-title">My Projects</h1>
         
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">🚀</div>
-                <div class="project-content">
-                    <h3 class="project-title">E-Commerce Platform</h3>
-                    <p class="project-description">
-                        A full-stack e-commerce solution built with React and Node.js, 
-                        featuring real-time inventory management, secure payments, and 
-                        comprehensive admin dashboard.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Stripe API</span>
-                        <span class="tech-tag">Socket.io</span>
+        <!-- Side Projects Section -->
+        <section class="project-category">
+            <h2 class="category-title">Side Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="public/projects/medispense.png" alt="MediSpense" class="project-img">
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                    <div class="project-content">
+                        <h3 class="project-title">MediSpense</h3>
+                        <p class="project-description">
+                            A smart medication management system that helps patients track their medications, 
+                            set reminders, and monitor adherence. Features automated dispensing and 
+                            comprehensive health analytics dashboard.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Express</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="project-card">
-                <div class="project-image">📱</div>
-                <div class="project-content">
-                    <h3 class="project-title">Task Management App</h3>
-                    <p class="project-description">
-                        A collaborative task management application with real-time updates, 
-                        drag-and-drop functionality, team collaboration features, and 
-                        advanced project analytics.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Vue.js</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Vuetify</span>
-                        <span class="tech-tag">PWA</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                <div class="project-card">
+                    <div class="project-image">📱</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Personal Finance Tracker</h3>
+                        <p class="project-description">
+                            A comprehensive personal finance application with expense tracking, 
+                            budget planning, investment monitoring, and financial goal setting. 
+                            Features automated transaction categorization and detailed analytics.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">PWA</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="project-card">
-                <div class="project-image">🎨</div>
-                <div class="project-content">
-                    <h3 class="project-title">Design System Library</h3>
-                    <p class="project-description">
-                        A comprehensive design system and component library for consistent 
-                        UI/UX across multiple applications. Includes documentation, 
-                        theming, and accessibility guidelines.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Storybook</span>
-                        <span class="tech-tag">Sass</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Jest</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                <div class="project-card">
+                    <div class="project-image">🎨</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Portfolio Website Builder</h3>
+                        <p class="project-description">
+                            A drag-and-drop portfolio website builder for creatives and developers. 
+                            Features customizable templates, real-time preview, and seamless deployment 
+                            with integrated analytics and SEO optimization.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Sass</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="project-card">
-                <div class="project-image">🤖</div>
-                <div class="project-content">
-                    <h3 class="project-title">AI Chat Assistant</h3>
-                    <p class="project-description">
-                        An intelligent chat assistant powered by machine learning, 
-                        featuring natural language processing, context awareness, 
-                        and integration with multiple APIs.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">OpenAI</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">PostgreSQL</span>
+        <!-- Hackathons Section -->
+        <section class="project-category">
+            <h2 class="category-title">Hackathons</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="public/projects/Hammer.png" alt="Hammer Project" class="project-img">
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                    <div class="project-content">
+                        <h3 class="project-title">Hammer - HammerHacks 2024</h3>
+                        <p class="project-description">
+                            Winner of Best Overall Project at HammerHacks 2024. A collaborative 
+                            development tool that streamlines code review processes and enhances 
+                            team productivity through AI-powered suggestions and automated testing.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">Devpost</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="project-card">
-                <div class="project-image">📊</div>
-                <div class="project-content">
-                    <h3 class="project-title">Data Visualization Dashboard</h3>
-                    <p class="project-description">
-                        Interactive dashboard for complex data visualization with 
-                        real-time updates, custom charts, filtering capabilities, 
-                        and export functionality for business intelligence.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">D3.js</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Express</span>
-                        <span class="tech-tag">Redis</span>
-                        <span class="tech-tag">Chart.js</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                <div class="project-card">
+                    <div class="project-image">🌍</div>
+                    <div class="project-content">
+                        <h3 class="project-title">EcoTrack - TerraHacks 2024</h3>
+                        <p class="project-description">
+                            Environmental impact tracking application that helps users monitor their 
+                            carbon footprint, set sustainability goals, and connect with eco-friendly 
+                            initiatives in their community. Won Best Environmental Impact Award.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">GraphQL</span>
+                            <span class="tech-tag">Maps API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">Devpost</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="project-card">
-                <div class="project-image">🌐</div>
-                <div class="project-content">
-                    <h3 class="project-title">Social Media Platform</h3>
-                    <p class="project-description">
-                        A modern social media platform with real-time messaging, 
-                        content sharing, user authentication, media uploads, 
-                        and advanced privacy controls.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">GraphQL</span>
-                        <span class="tech-tag">Prisma</span>
-                        <span class="tech-tag">AWS S3</span>
-                        <span class="tech-tag">WebRTC</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                <div class="project-card">
+                    <div class="project-image">💡</div>
+                    <div class="project-content">
+                        <h3 class="project-title">SmartLearn - SolutionHacks 2024</h3>
+                        <p class="project-description">
+                            AI-powered personalized learning platform that adapts to individual 
+                            learning styles and pace. Features interactive lessons, progress tracking, 
+                            and intelligent content recommendations. Top 3 finalist.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">WebRTC</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">Devpost</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Papers Section -->
+        <section class="project-category">
+            <h2 class="category-title">Research Papers</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">📊</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Machine Learning Optimization in Healthcare Data Analysis</h3>
+                        <p class="project-description">
+                            Published research on optimizing machine learning algorithms for healthcare 
+                            data analysis, focusing on improving diagnostic accuracy while reducing 
+                            computational complexity. Presented at IEEE Conference 2024.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">LaTeX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Paper PDF</a>
+                            <a href="#" class="project-link">IEEE</a>
+                            <a href="#" class="project-link">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🔐</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Blockchain-Based Identity Management Systems</h3>
+                        <p class="project-description">
+                            Research paper exploring the implementation of blockchain technology 
+                            for secure identity management in distributed systems. Focus on 
+                            privacy preservation and scalability challenges.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Blockchain</span>
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">Web3.js</span>
+                            <span class="tech-tag">Cryptography</span>
+                            <span class="tech-tag">Research</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Paper PDF</a>
+                            <a href="#" class="project-link">ArXiv</a>
+                            <a href="#" class="project-link">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🧠</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Neural Networks for Natural Language Processing</h3>
+                        <p class="project-description">
+                            Comparative study of transformer architectures for multilingual 
+                            natural language processing tasks. Includes novel attention 
+                            mechanisms and performance optimizations for low-resource languages.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">BERT</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">CUDA</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Paper PDF</a>
+                            <a href="#" class="project-link">Conference</a>
+                            <a href="#" class="project-link">Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
