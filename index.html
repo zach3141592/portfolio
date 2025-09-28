@@ -41,6 +41,7 @@
             overflow-x: hidden;
             font-family: 'Times New Roman', serif;
             padding-top: 80px;
+            background-color: #000000;
             background-image: url('/background.jpg');
             background-size: cover;
             background-position: center;
@@ -846,9 +847,59 @@
             animation: floatRight 8s linear infinite;
         }
 
+        /* Simple Mode Link */
+        .simple-mode-link {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            font-family: 'Times New Roman', serif;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 1001;
+        }
+
+        .simple-mode-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .simple-mode-link {
+                top: 1rem;
+                right: 1rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Footer Simple Mode Button Hover */
+        footer a:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
+            border-color: rgba(255, 255, 255, 0.4) !important;
+        }
+
+        /* Footer responsive layout */
+        @media (max-width: 768px) {
+            footer div[style*="display: flex"] {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Simple Mode Link -->
+    <a href="simple.html" class="simple-mode-link">Simple Mode</a>
+    
     <!-- Navigation -->
     <nav class="navbar" id="navbar" style="transform: translateY(-100%); transition: transform 0.3s ease;">
         <div class="nav-container">
@@ -1398,9 +1449,14 @@
     <!-- Footer -->
     <footer style="background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 2rem 0; margin-top: 4rem; position: relative; z-index: 1002;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center;">
-            <p style="color: #ffffff; font-family: 'Times New Roman', serif; font-size: 1rem; margin: 0; opacity: 1; font-weight: 700;">
-                2025. Made by Zachary Yu.
-            </p>
+            <div style="position: relative; display: flex; justify-content: center; align-items: center;">
+                <p style="color: #ffffff; font-family: 'Times New Roman', serif; font-size: 1rem; margin: 0; opacity: 1; font-weight: 700;">
+                    2025. Made by Zachary Yu.
+                </p>
+                <a href="simple.html" style="position: absolute; right: 0; background: #000000; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 8px; color: #ffffff; padding: 0.5rem 1rem; font-family: 'Times New Roman', serif; font-weight: 500; text-decoration: none; transition: all 0.3s ease;">
+                    Simple Mode
+                </a>
+            </div>
         </div>
     </footer>
 
