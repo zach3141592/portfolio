@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    {
+      "source": "/simple",
+      "destination": "/simple.html"
+    },
+    {
+      "source": "/simple/",
+      "destination": "/simple.html"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
