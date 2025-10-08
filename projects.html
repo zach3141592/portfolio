@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Zachary Yu's Projects - Full-Stack Developer Portfolio">
+    <meta name="description" content="Zachary Yu's Projects">
     <meta name="author" content="Zachary Yu">
-    <meta name="theme-color" content="#000000">
-    
     <title>Projects - Zachary Yu</title>
-    <link rel="icon" type="image/png" href="/ZY.png">
-    <link rel="manifest" href="/manifest.json">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/yu.png">
     
     <style>
         * {
@@ -18,427 +14,195 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
-        html, body {
-            height: 100%;
-            font-family: 'Times New Roman', serif;
-            background-color: #000000;
-            color: #ffffff;
-            overflow-x: hidden;
-            scroll-behavior: auto;
-        }
 
-        .container {
-            max-width: 1200px;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            padding: 3rem 4rem;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 2rem;
-            min-height: 100vh;
         }
 
-        .back-button {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 1rem 1.5rem;
-            font-family: 'Times New Roman', serif;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+        .header {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 0;
+            color: #000000;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 0.2rem;
+            right: 0;
+            display: flex;
+            gap: 2rem;
             z-index: 1000;
         }
 
-        .back-button:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-2px);
+        .nav-link {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid transparent;
         }
 
-        .page-title {
-            text-align: center;
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin: 4rem 0 3rem 0;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .nav-link:hover {
+            border-bottom: 1px solid #000000;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+        .section {
+            margin-bottom: 2rem;
         }
 
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-image {
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-title {
+        .section-title {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #ffffff;
+            color: #000000;
+        }
+
+        .project-item {
+            margin-bottom: 2rem;
+        }
+
+        .project-name {
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-name a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .project-name a:hover {
+            text-decoration: underline;
+        }
+
+        .project-date {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
         }
 
         .project-description {
-            color: #cccccc;
+            color: #666666;
+            font-size: 0.95rem;
             line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            padding: 0.25rem 0.75rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            padding: 0.5rem 1rem;
-            border: 1px solid #667eea;
-            border-radius: 8px;
-        }
-
-        .project-link:hover {
-            color: #764ba2;
-            border-color: #764ba2;
-            background: rgba(102, 126, 234, 0.1);
-        }
-
-        /* Project Category Styles */
-        .project-category {
-            margin-bottom: 4rem;
-        }
-
-        .category-title {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 2rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .category-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-
-        .project-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         @media (max-width: 768px) {
-            .page-title {
-                font-size: 2.5rem;
+            body {
+                padding: 2rem 2rem;
+                max-width: 100%;
             }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .back-button {
-                top: 1rem;
-                left: 1rem;
-                padding: 0.75rem 1.25rem;
+
+            .nav-links {
+                top: 0.2rem;
+                right: 0;
+                gap: 1rem;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-button">← Back to Forest</a>
-    
-    <div class="container">
-        <h1 class="page-title">My Projects</h1>
+    <div class="header">
+        <h1>projects</h1>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">home</a>
+            <a href="about.html" class="nav-link">about</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">hackathon projects</h2>
         
-        <!-- Side Projects Section -->
-        <section class="project-category">
-            <h2 class="category-title">Side Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="public/projects/medispense.png" alt="MediSpense" class="project-img">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">MediSpense</h3>
-                        <p class="project-description">
-                            A smart medication management system that helps patients track their medications, 
-                            set reminders, and monitor adherence. Features automated dispensing and 
-                            comprehensive health analytics dashboard.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">IoT</span>
-                            <span class="tech-tag">Express</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">📱</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Personal Finance Tracker</h3>
-                        <p class="project-description">
-                            A comprehensive personal finance application with expense tracking, 
-                            budget planning, investment monitoring, and financial goal setting. 
-                            Features automated transaction categorization and detailed analytics.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Chart.js</span>
-                            <span class="tech-tag">PWA</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🎨</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Portfolio Website Builder</h3>
-                        <p class="project-description">
-                            A drag-and-drop portfolio website builder for creatives and developers. 
-                            Features customizable templates, real-time preview, and seamless deployment 
-                            with integrated analytics and SEO optimization.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Sass</span>
-                            <span class="tech-tag">AWS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="project-item">
+            <div class="project-name">
+                <a href="https://github.com/zach3141592/UTRAHacks2025" target="_blank">Medispense</a>
             </div>
-        </section>
-
-        <!-- Hackathons Section -->
-        <section class="project-category">
-            <h2 class="category-title">Hackathons</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="public/projects/Hammer.png" alt="Hammer Project" class="project-img">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Hammer - HammerHacks 2024</h3>
-                        <p class="project-description">
-                            Winner of Best Overall Project at HammerHacks 2024. A collaborative 
-                            development tool that streamlines code review processes and enhances 
-                            team productivity through AI-powered suggestions and automated testing.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">OpenAI API</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">Devpost</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🌍</div>
-                    <div class="project-content">
-                        <h3 class="project-title">EcoTrack - TerraHacks 2024</h3>
-                        <p class="project-description">
-                            Environmental impact tracking application that helps users monitor their 
-                            carbon footprint, set sustainability goals, and connect with eco-friendly 
-                            initiatives in their community. Won Best Environmental Impact Award.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">GraphQL</span>
-                            <span class="tech-tag">Maps API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">Devpost</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">💡</div>
-                    <div class="project-content">
-                        <h3 class="project-title">SmartLearn - SolutionHacks 2024</h3>
-                        <p class="project-description">
-                            AI-powered personalized learning platform that adapts to individual 
-                            learning styles and pace. Features interactive lessons, progress tracking, 
-                            and intelligent content recommendations. Top 3 finalist.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">WebRTC</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">Devpost</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="project-date">UTRAHacks 2025 • Winner</div>
+            <div class="project-description">
+                A comprehensive healthcare solution with Arduino hardware, iOS app, and cloud backend 
+                for smart medication dispensing and patient management.
             </div>
-        </section>
+        </div>
 
-        <!-- Papers Section -->
-        <section class="project-category">
-            <h2 class="category-title">Research Papers</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">📊</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Machine Learning Optimization in Healthcare Data Analysis</h3>
-                        <p class="project-description">
-                            Published research on optimizing machine learning algorithms for healthcare 
-                            data analysis, focusing on improving diagnostic accuracy while reducing 
-                            computational complexity. Presented at IEEE Conference 2024.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                            <span class="tech-tag">LaTeX</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Paper PDF</a>
-                            <a href="#" class="project-link">IEEE</a>
-                            <a href="#" class="project-link">Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🔐</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Blockchain-Based Identity Management Systems</h3>
-                        <p class="project-description">
-                            Research paper exploring the implementation of blockchain technology 
-                            for secure identity management in distributed systems. Focus on 
-                            privacy preservation and scalability challenges.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Blockchain</span>
-                            <span class="tech-tag">Solidity</span>
-                            <span class="tech-tag">Web3.js</span>
-                            <span class="tech-tag">Cryptography</span>
-                            <span class="tech-tag">Research</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Paper PDF</a>
-                            <a href="#" class="project-link">ArXiv</a>
-                            <a href="#" class="project-link">Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🧠</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Neural Networks for Natural Language Processing</h3>
-                        <p class="project-description">
-                            Comparative study of transformer architectures for multilingual 
-                            natural language processing tasks. Includes novel attention 
-                            mechanisms and performance optimizations for low-resource languages.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">Transformers</span>
-                            <span class="tech-tag">BERT</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">CUDA</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Paper PDF</a>
-                            <a href="#" class="project-link">Conference</a>
-                            <a href="#" class="project-link">Code</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="project-item">
+            <div class="project-name">
+                <a href="https://github.com/zach3141592/HammerHacks2024" target="_blank">NoRot</a>
             </div>
-        </section>
+            <div class="project-date">HammerHacks 2024 • Winner</div>
+            <div class="project-description">
+                A Chrome extension designed to help young internet users break free from "brainrot" content 
+                and develop more meaningful communication patterns online.
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-name">
+                <a href="https://github.com/zach3141592/SolutionHacks2025" target="_blank">Veridata</a>
+            </div>
+            <div class="project-date">SolutionHacks 2025 • Winner</div>
+            <div class="project-description">
+                World's first AI-powered BS detector that verifies advertisement claims using Google Gemini API
+                and huggingface sentiment analysis models.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">research papers</h2>
+        
+        <div class="project-item">
+            <div class="project-name">
+                <a href="https://journal.stemfellowship.org/doi/abs/10.17975/sfj-2025-001" target="_blank">
+                    Optimizing Budget Allocations in Ontario School Boards
+                </a>
+            </div>
+            <div class="project-date">Canadian Science Publishing • Feb 2025</div>
+            <div class="project-description">
+                Research on optimizing budget allocations in Ontario school boards for efficient, 
+                equitable, and inclusive education through data-driven analysis and policy recommendations.
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-name">
+                <a href="https://journal.stemfellowship.org/doi/abs/10.17975/sfj-2024-004" target="_blank">
+                    Spatial Analysis of Plant Species and Biological Variety
+                </a>
+            </div>
+            <div class="project-date">Canadian Science Publishing • May 2024</div>
+            <div class="project-description">
+                Utilizing spatial analysis to identify correlations between plant species and biological variety 
+                to determine traits that foster biodiversity in ecosystems.
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-name">
+                <a href="https://journal.stemfellowship.org/doi/abs/10.17975/sfj-2023-002" target="_blank">
+                    Housing Factors and Life Satisfaction for Sustainable Living
+                </a>
+            </div>
+            <div class="project-date">Canadian Science Publishing • Apr 2023</div>
+            <div class="project-description">
+                Investigating the correlation between various housing factors and life satisfaction 
+                to build a model for sustainable living and improved quality of life.
+            </div>
+        </div>
     </div>
 </body>
 </html>

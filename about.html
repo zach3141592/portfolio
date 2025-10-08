@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Zachary Yu - Full-Stack Developer">
+    <meta name="description" content="About Zachary Yu">
     <meta name="author" content="Zachary Yu">
-    <meta name="theme-color" content="#000000">
-    
     <title>About - Zachary Yu</title>
-    <link rel="icon" type="image/png" href="/ZY.png">
-    <link rel="manifest" href="/manifest.json">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/yu.png">
     
     <style>
         * {
@@ -18,376 +14,184 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
-        html, body {
-            height: 100%;
-            font-family: 'Times New Roman', serif;
-            background-color: #000000;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
 
-        .container {
-            max-width: 1000px;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            padding: 3rem 4rem;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 2rem;
-            min-height: 100vh;
         }
 
-        .back-button {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 1rem 1.5rem;
-            font-family: 'Times New Roman', serif;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+        .header {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 0;
+            color: #000000;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 0.2rem;
+            right: 0;
+            display: flex;
+            gap: 2rem;
             z-index: 1000;
         }
 
-        .back-button:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-2px);
+        .nav-link {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid transparent;
         }
 
-        .page-title {
-            text-align: center;
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin: 4rem 0 3rem 0;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .nav-link:hover {
+            border-bottom: 1px solid #000000;
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin: 3rem 0;
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #000000;
         }
 
         .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #cccccc;
-        }
-
-        .about-text p {
+            color: #666666;
+            font-size: 0.95rem;
+            line-height: 1.6;
             margin-bottom: 1.5rem;
-        }
-
-        .about-text h3 {
-            color: #ffffff;
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem 0;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .about-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-placeholder {
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            font-size: 6rem;
-        }
-
-        .skills-section {
-            margin: 4rem 0;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .skill-category {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .skill-category h4 {
-            color: #ffffff;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .skill-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-name {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-        }
-
-        .skill-bar {
-            width: 100%;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            border-radius: 4px;
-            transition: width 0.3s ease;
-        }
-
-        .experience-section {
-            margin: 4rem 0;
         }
 
         .experience-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
         }
 
         .experience-title {
-            color: #ffffff;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 0.25rem;
         }
 
         .experience-company {
-            color: #667eea;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-company a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .experience-company a:hover {
+            text-decoration: underline;
         }
 
         .experience-date {
-            color: #999999;
+            color: #666666;
             font-size: 0.9rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .experience-description {
-            color: #cccccc;
+            color: #666666;
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
         @media (max-width: 768px) {
-            .page-title {
-                font-size: 2.5rem;
+            body {
+                padding: 2rem 2rem;
+                max-width: 100%;
             }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-            
-            .profile-placeholder {
-                width: 200px;
-                height: 200px;
-                font-size: 4rem;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .back-button {
-                top: 1rem;
-                left: 1rem;
-                padding: 0.75rem 1.25rem;
+
+            .nav-links {
+                top: 0.2rem;
+                right: 0;
+                gap: 1rem;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-button">← Back to Forest</a>
-    
-    <div class="container">
-        <h1 class="page-title">About Me</h1>
+    <div class="header">
+        <h1>about</h1>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">home</a>
+            <a href="projects.html" class="nav-link">projects</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="about-text">
+            I'M ZACHARY YU. I love building, startups, people, basketball, and jazz.
+        </div>
+        <div class="about-text">
+            I build full-stack web applications and ML models.
+        </div>
+        <div class="about-text">
+            <strong style="font-weight: 600; color: #000000;">RECENTLY:</strong><br>
+            - 3x Finalist in National Big Data Challenge<br>
+            - Made an app with over 4K users<br>
+            - Currently making <a href="https://vibeornot.com" target="_blank" style="color: #000000; text-decoration: underline;">vibeornot.com</a><br>
+            - Currently making AI clones of everyone
+        </div>
+        <div class="about-text">
+            <strong style="font-weight: 600; color: #000000;">GOALS:</strong><br>
+            I want to make very cool shit.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">experience</h2>
         
-        <div class="about-content">
-            <div class="about-text">
-                <p>
-                    Hello! I'm Zachary Yu, a passionate full-stack developer with a love for 
-                    creating innovative digital solutions. I specialize in building responsive, 
-                    user-friendly applications that solve real-world problems.
-                </p>
-                <p>
-                    With expertise in modern web technologies and a keen eye for design, 
-                    I enjoy the entire development process - from initial concept and design 
-                    to implementation and deployment.
-                </p>
-                <p>
-                    When I'm not coding, you can find me exploring new technologies, 
-                    contributing to open-source projects, reading about emerging tech trends, 
-                    or enjoying the great outdoors.
-                </p>
-                
-                <h3>What I Do</h3>
-                <p>
-                    I create full-stack web applications, design user interfaces, 
-                    build RESTful APIs, implement databases, and ensure optimal 
-                    performance and security across all projects.
-                </p>
+        <div class="experience-item">
+            <div class="experience-title">Software Engineer</div>
+            <div class="experience-company">
+                <a href="https://www.linkedin.com/company/cacheai/" target="_blank">CacheAI</a>
             </div>
-            
-            <div class="about-image">
-                <div class="profile-placeholder">👨‍💻</div>
+            <div class="experience-date">August 2025 - Present</div>
+            <div class="experience-description">
+                Building intelligent caching solutions and AI-powered optimization systems. Contributing to 
+                cutting-edge technology that improves application performance and user experience.
             </div>
         </div>
 
-        <div class="skills-section">
-            <h3 style="text-align: center; margin-bottom: 2rem; color: #ffffff;">Technical Skills</h3>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Frontend Development</h4>
-                    <div class="skill-item">
-                        <span class="skill-name">JavaScript/TypeScript</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">React/Next.js</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Vue.js</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">CSS/Sass</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h4>Backend Development</h4>
-                    <div class="skill-item">
-                        <span class="skill-name">Node.js</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 82%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Python</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 78%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Express/FastAPI</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">GraphQL</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h4>Database & Tools</h4>
-                    <div class="skill-item">
-                        <span class="skill-name">MongoDB</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">PostgreSQL</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Git/GitHub</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Docker</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 72%"></div>
-                        </div>
-                    </div>
-                </div>
+        <div class="experience-item">
+            <div class="experience-title">Founding Software Engineer</div>
+            <div class="experience-company">
+                <a href="https://www.linkedin.com/company/handsforu/" target="_blank">Hands</a>
+            </div>
+            <div class="experience-date">June 2025 - August 2025</div>
+            <div class="experience-description">
+                Early-stage startup focused on innovative technology solutions. Contributed to foundational 
+                architecture and product development as one of the first engineering hires.
             </div>
         </div>
 
-        <div class="experience-section">
-            <h3 style="text-align: center; margin-bottom: 2rem; color: #ffffff;">Experience</h3>
-            
-            <div class="experience-item">
-                <div class="experience-title">Senior Full-Stack Developer</div>
-                <div class="experience-company">Tech Innovations Inc.</div>
-                <div class="experience-date">2022 - Present</div>
-                <div class="experience-description">
-                    Leading development of enterprise web applications, mentoring junior developers, 
-                    and implementing modern technologies to improve system performance and user experience.
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-title">Full-Stack Developer</div>
-                <div class="experience-company">Digital Solutions LLC</div>
-                <div class="experience-date">2020 - 2022</div>
-                <div class="experience-description">
-                    Developed and maintained multiple client websites and applications using React, 
-                    Node.js, and various databases. Collaborated with design teams to create 
-                    responsive and accessible user interfaces.
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-title">Frontend Developer</div>
-                <div class="experience-company">StartUp Ventures</div>
-                <div class="experience-date">2019 - 2020</div>
-                <div class="experience-description">
-                    Built responsive web applications and landing pages for various startup clients. 
-                    Focused on performance optimization and modern JavaScript frameworks.
-                </div>
+        <div class="experience-item">
+            <div class="experience-title">Research Assistant</div>
+            <div class="experience-company">UWaterloo</div>
+            <div class="experience-date">2023 - 2025</div>
+            <div class="experience-description">
+                Conducted research in data analysis and machine learning, contributing to multiple published papers
+                and developing expertise in statistical modeling and research methodologies.
             </div>
         </div>
     </div>
