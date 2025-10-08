@@ -4,10 +4,6 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": null,
-  "rewrites": [
-    {
-      "source": "/simple",
-      "destination": "/simple.html"
-    }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
