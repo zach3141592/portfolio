@@ -53,10 +53,20 @@
             font-size: 1rem;
             transition: all 0.2s ease;
             border-bottom: 1px solid transparent;
+            position: relative;
         }
 
         .nav-link:hover {
             border-bottom: 1px solid #000000;
+        }
+
+        .nav-link.active::before {
+            content: '☺';
+            position: absolute;
+            top: -1.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
         }
 
         .section {
@@ -216,8 +226,9 @@
     <div class="header">
         <h1>zachary yu (유진영)</h1>
         <div class="nav-links">
-            <a href="projects.html" class="nav-link">projects</a>
+            <a href="index.html" class="nav-link active">home</a>
             <a href="about.html" class="nav-link">about</a>
+            <a href="projects.html" class="nav-link">projects</a>
         </div>
             </div>
             
