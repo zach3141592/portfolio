@@ -30,6 +30,13 @@
             margin-bottom: 1rem;
         }
 
+        .header-divider {
+            border: none;
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 2rem 0;
+        }
+
         h1 {
             font-size: 2rem;
             font-weight: 400;
@@ -51,11 +58,21 @@
             font-size: 0.9rem;
             font-weight: 400;
             color: #666666;
-            margin-top: 0.5rem;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .subtitle a {
-            color: #666666;
+        .waterloo-logo {
+            width: 16px;
+            height: 16px;
+        }
+
+        .star-icon {
+            width: 14px;
+            height: 14px;
+            fill: #666666;
         }
 
         .nav-links {
@@ -95,7 +112,17 @@
         }
 
         .section {
-            margin-bottom: 1rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        #projects {
+            border-bottom: none;
         }
 
         .section-item {
@@ -119,17 +146,12 @@
             color: #666666;
             margin-left: 1rem;
             font-size: 0.95rem;
+            line-height: 1.8;
         }
 
-        .projects-link {
-            color: #000000;
-            font-weight: 500;
-            margin-top: 1rem;
-            display: inline-block;
-        }
 
         .footer {
-            margin-top: 4rem;
+            margin-top: 2rem;
             padding-top: 2rem;
             border-top: 1px solid #e0e0e0;
         }
@@ -288,7 +310,13 @@
 <body>
     <div class="header">
         <h1><a href="index.html">Zachary Yu (유진영)</a></h1>
-        <div class="subtitle">CS at <a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a></div>
+        <div class="subtitle">
+            <svg class="star-icon" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            CS at <a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a>
+            <img src="/logos/waterloo-logo.png" alt="University of Waterloo" class="waterloo-logo">
+        </div>
         <div class="nav-links">
             <a href="index.html" class="nav-link active">Home</a>
             <a href="about.html" class="nav-link">About</a>
@@ -296,15 +324,17 @@
         </div>
             </div>
             
+    <hr class="header-divider">
+            
     <div class="section">
         <div class="section-item">
             <span class="bullet">•</span>
             <span>What I've been building:</span>
             </div>
         <div class="description">
-            ↳ Made <a href="https://vibeornot.com" target="_blank" style="color: #000000;">vibeornot.com</a> in 24 hours<br>
-            ↳ Published 3 papers in Canadian Science Publishing (3x Finalist in National ML Competition)<br>
-            ↳ Building AI agents that can make decisions like you
+            Made <a href="https://vibeornot.com" target="_blank" style="color: #000000;">vibeornot.com</a> in 24 hours<br>
+            Published 3 papers in Canadian Science Publishing (3x Finalist in National ML Competition)<br>
+            Building AI agents that can make decisions like you
                 </div>
             </div>
                 
@@ -314,13 +344,11 @@
             <span>Projects:</span>
                 </div>
         <div class="description">
-            ↳ <strong><a href="https://github.com/zach3141592/medispense" target="_blank" style="color: #000000; text-decoration: none;">Medispense</a></strong> - Healthcare IoT with Arduino, iOS app, cloud backend<br>
-            ↳ <strong><a href="https://github.com/zach3141592/norot" target="_blank" style="color: #000000; text-decoration: none;">NoRot</a></strong> - Chrome extension for breaking "brainrot" content patterns (HammerHacks Winner)<br>
-            ↳ <strong><a href="https://github.com/zach3141592/SolutionHacks2025" target="_blank" style="color: #000000; text-decoration: none;">Veridata</a></strong> - World's first AI BS detector (SolutionHacks Winner)
+            <strong><a href="https://github.com/zach3141592/medispense" target="_blank" style="color: #000000; text-decoration: none;">Medispense</a></strong> - Healthcare IoT with Arduino, iOS app, cloud backend<br>
+            <strong><a href="https://github.com/zach3141592/norot" target="_blank" style="color: #000000; text-decoration: none;">NoRot</a></strong> - Chrome extension for breaking "brainrot" content patterns (HammerHacks Winner)<br>
+            <strong><a href="https://github.com/zach3141592/SolutionHacks2025" target="_blank" style="color: #000000; text-decoration: none;">Veridata</a></strong> - World's first AI BS detector (SolutionHacks Winner)
             </div>
         </div>
-
-    <a href="projects.html" class="projects-link">See More Projects →</a>
 
     <div class="footer">
         <div class="footer-content">
