@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Zachary Yu's Projects">
+    <meta name="description" content="Zachary Yu's Memories">
     <meta name="author" content="Zachary Yu">
-    <title>Projects - Zachary Yu</title>
+    <title>Other - Zachary Yu</title>
     <link rel="icon" type="image/png" href="/yu.png">
     
     <style>
@@ -27,7 +27,7 @@
 
         .header {
             position: relative;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         h1 {
@@ -88,45 +88,45 @@
             padding-bottom: 2rem;
         }
 
-        .section:last-of-type {
-            border-bottom: none;
-        }
-
         .section-title {
             font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             color: #000000;
         }
 
-        .project-item {
-            margin-bottom: 3rem;
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .project-name {
-            font-weight: 600;
-            color: #000000;
+        .memory-item {
+            text-align: center;
+        }
+
+        .memory-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
             margin-bottom: 0.5rem;
+            transition: transform 0.2s ease;
         }
 
-        .project-name a {
-            color: #000000;
+        .memory-image:hover {
+            transform: scale(1.05);
         }
 
-        .project-date {
-            color: #666666;
+        .memory-name {
             font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-description {
             color: #666666;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-weight: 500;
         }
 
         .footer {
-            margin-top: 0;
+            margin-top: 4rem;
             padding-top: 2rem;
             border-top: 1px solid #e0e0e0;
         }
@@ -227,13 +227,6 @@
 
             .header {
                 margin-bottom: 1.5rem;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .subtitle {
-                order: 3;
-                margin-top: 1rem;
             }
 
             .nav-links {
@@ -243,7 +236,11 @@
                 margin-top: 1.5rem;
                 gap: 1rem;
                 font-size: 0.9rem;
-                order: 2;
+            }
+
+            .memories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1.5rem;
             }
 
             .footer-content {
@@ -276,8 +273,9 @@
                 font-size: 0.85rem;
             }
 
-            .section {
-                margin-bottom: 1.5rem;
+            .memories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
             }
         }
     </style>
@@ -288,87 +286,58 @@
         <div class="nav-links">
             <a href="index.html" class="nav-link">Home</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="projects.html" class="nav-link active">Projects</a>
-            <a href="other.html" class="nav-link">Other</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="other.html" class="nav-link active">Other</a>
         </div>
     </div>
 
     <div class="section">
-        <h2 class="section-title">PROJECTS</h2>
+        <h2 class="section-title">Memories</h2>
         
-        <div class="project-item">
-            <div class="project-name">
-                <a href="https://github.com/zach3141592/UTRAHacks2025" target="_blank">Medispense</a>
+        <div class="memories-grid">
+            <div class="memory-item">
+                <img src="/memories/bdc.png" alt="BDC" class="memory-image">
+                <div class="memory-name">BDC</div>
             </div>
-            <div class="project-date">UTRAHacks 2025 • Winner</div>
-            <div class="project-description">
-                A comprehensive healthcare solution with Arduino hardware, iOS app, and cloud backend 
-                for smart medication dispensing and patient management.
+            
+            <div class="memory-item">
+                <img src="/memories/beertown.png" alt="Beertown" class="memory-image">
+                <div class="memory-name">Beertown</div>
             </div>
-        </div>
-
-        <div class="project-item">
-            <div class="project-name">
-                <a href="https://github.com/zach3141592/HammerHacks2024" target="_blank">NoRot</a>
+            
+            <div class="memory-item">
+                <img src="/memories/graduation.png" alt="Graduation" class="memory-image">
+                <div class="memory-name">Graduation</div>
             </div>
-            <div class="project-date">HammerHacks 2024 • Winner</div>
-            <div class="project-description">
-                A Chrome extension designed to help young internet users break free from "brainrot" content 
-                and develop more meaningful communication patterns online.
+            
+            <div class="memory-item">
+                <img src="/memories/hammerhacks.png" alt="HammerHacks" class="memory-image">
+                <div class="memory-name">HammerHacks</div>
             </div>
-        </div>
-
-        <div class="project-item">
-            <div class="project-name">
-                <a href="https://github.com/zach3141592/SolutionHacks2025" target="_blank">Veridata</a>
+            
+            <div class="memory-item">
+                <img src="/memories/piano.png" alt="Piano" class="memory-image">
+                <div class="memory-name">Piano</div>
             </div>
-            <div class="project-date">SolutionHacks 2025 • Winner</div>
-            <div class="project-description">
-                World's first AI-powered BS detector that verifies advertisement claims using Google Gemini API
-                and huggingface sentiment analysis models.
+            
+            <div class="memory-item">
+                <img src="/memories/solutionHacks.png" alt="SolutionHacks" class="memory-image">
+                <div class="memory-name">SolutionHacks</div>
             </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">RESEARCH PAPERS</h2>
-        
-        <div class="project-item">
-            <div class="project-name">
-                <a href="https://journal.stemfellowship.org/doi/abs/10.17975/sfj-2025-001" target="_blank">
-                    Optimizing Budget Allocations in Ontario School Boards
-                </a>
+            
+            <div class="memory-item">
+                <img src="/memories/terrahacks.png" alt="TerraHacks" class="memory-image">
+                <div class="memory-name">TerraHacks</div>
             </div>
-            <div class="project-date">Canadian Science Publishing • Feb 2025</div>
-            <div class="project-description">
-                Research on optimizing budget allocations in Ontario school boards for efficient, 
-                equitable, and inclusive education through data-driven analysis and policy recommendations.
+            
+            <div class="memory-item">
+                <img src="/memories/uwmafia.png" alt="UW Mafia" class="memory-image">
+                <div class="memory-name">UW Mafia</div>
             </div>
-        </div>
-
-        <div class="project-item">
-            <div class="project-name">
-                <a href="https://journal.stemfellowship.org/doi/abs/10.17975/sfj-2024-004" target="_blank">
-                    Spatial Analysis of Plant Species and Biological Variety
-                </a>
-            </div>
-            <div class="project-date">Canadian Science Publishing • May 2024</div>
-            <div class="project-description">
-                Utilizing spatial analysis to identify correlations between plant species and biological variety 
-                to determine traits that foster biodiversity in ecosystems.
-            </div>
-        </div>
-
-        <div class="project-item">
-            <div class="project-name">
-                <a href="https://journal.stemfellowship.org/doi/abs/10.17975/sfj-2023-002" target="_blank">
-                    Housing Factors and Life Satisfaction for Sustainable Living
-                </a>
-            </div>
-            <div class="project-date">Canadian Science Publishing • Apr 2023</div>
-            <div class="project-description">
-                Investigating the correlation between various housing factors and life satisfaction 
-                to build a model for sustainable living and improved quality of life.
+            
+            <div class="memory-item">
+                <img src="/memories/yc.png" alt="YC" class="memory-image">
+                <div class="memory-name">YC</div>
             </div>
         </div>
     </div>
