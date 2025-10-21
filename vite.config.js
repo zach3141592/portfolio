@@ -11,7 +11,8 @@ export default defineConfig({
       input: {
         main: './index.html',
         projects: './projects.html',
-        about: './about.html'
+        about: './about.html',
+        other: './other.html'
       }
     }
   },
