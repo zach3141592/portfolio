@@ -95,8 +95,15 @@
             padding-bottom: 1.5rem;
         }
 
-        .section:not(:last-of-type) {
-            border-bottom: 1px solid #e0e0e0;
+        .section + .section {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 2.5rem;
+            margin-top: 0;
+        }
+
+        .section:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .section-title {
@@ -133,7 +140,7 @@
         }
 
         .footer {
-            margin-top: 0;
+            margin-top: 2.5rem;
             padding-top: 2rem;
             border-top: 1px solid #e0e0e0;
         }
