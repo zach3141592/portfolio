@@ -91,12 +91,12 @@
         }
 
         .section {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
         }
 
-        .section:last-of-type {
-            border-bottom: none;
+        .section:not(:last-of-type) {
+            border-bottom: 1px solid #e0e0e0;
         }
 
         .section-title {
@@ -107,13 +107,13 @@
         }
 
         .project-item {
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
         }
 
         .project-name {
             font-weight: 600;
             color: #000000;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .project-name a {
@@ -121,9 +121,9 @@
         }
 
         .project-date {
-            color: #000000;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            color: #666666;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
         }
 
         .project-description {
@@ -318,23 +318,23 @@
 
         <div class="project-item">
             <div class="project-name">
-                <a href="https://github.com/zach3141592/HammerHacks2024" target="_blank">NoRot</a>
-            </div>
-            <div class="project-date">2024</div>
-            <div class="project-description">
-                A Chrome extension designed to help young internet users break free from "brainrot" content 
-                and develop more meaningful communication patterns online. Winner of HammerHacks 2024.
-            </div>
-        </div>
-
-        <div class="project-item">
-            <div class="project-name">
                 <a href="https://github.com/zach3141592/SolutionHacks2025" target="_blank">Veridata</a>
             </div>
             <div class="project-date">2025</div>
             <div class="project-description">
                 World's first AI-powered BS detector that verifies advertisement claims using Google Gemini API
                 and huggingface sentiment analysis models. Winner of SolutionHacks 2025.
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-name">
+                <a href="https://github.com/zach3141592/HammerHacks2024" target="_blank">NoRot</a>
+            </div>
+            <div class="project-date">2024</div>
+            <div class="project-description">
+                A Chrome extension designed to help young internet users break free from "brainrot" content 
+                and develop more meaningful communication patterns online. Winner of HammerHacks 2024.
             </div>
         </div>
     </div>
