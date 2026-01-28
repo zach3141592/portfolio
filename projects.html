@@ -7,7 +7,10 @@
     <meta name="author" content="Zachary Yu">
     <title>Projects - Zachary Yu</title>
     <link rel="icon" type="image/png" href="/yu.png">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -16,111 +19,88 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Cormorant Garamond', Georgia, serif;
             background-color: #ffffff;
             color: #000000;
-            line-height: 1.6;
-            padding: 3rem 4rem;
-            max-width: 700px;
+            line-height: 1.8;
+            padding: 4rem 2rem;
+            max-width: 960px;
             margin: 0 auto;
         }
 
         .header {
-            position: relative;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
 
         .header-divider {
             border: none;
             height: 1px;
-            background-color: #e0e0e0;
-            margin: 2rem 0;
+            background-color: #000000;
+            margin: 2.5rem 0;
         }
 
         h1 {
-            font-size: 1.7rem;
+            font-size: 2.8rem;
             font-weight: 400;
             margin-bottom: 0;
+            color: #000000;
+            letter-spacing: 0.02em;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
             color: #000000;
         }
 
         a {
             color: #000000;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
+            border-bottom: 1px solid #000000;
+            transition: opacity 0.2s ease;
         }
 
         a:hover {
-            text-decoration: none;
+            opacity: 0.6;
         }
 
-        .nav-links {
-            position: absolute;
-            top: 0.8rem;
-            right: 0;
-            display: flex;
-            gap: 2rem;
-            z-index: 1000;
+        h1 a {
+            border-bottom: none;
         }
 
-        .nav-link {
-            color: #000000;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-            border-bottom: 1px solid transparent;
-            position: relative;
-        }
-
-        .nav-link:hover {
-            border-bottom: 1px solid #000000;
-        }
-
-        .nav-link.active::before {
-            content: '';
-            position: absolute;
-            top: -1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 16px;
-            height: 16px;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>');
-            background-size: contain;
-            background-repeat: no-repeat;
+        h1 a:hover {
+            opacity: 1;
         }
 
         .section {
-            margin-bottom: 2.5rem;
-            padding-bottom: 1.5rem;
-        }
-
-        .section + .section {
-            border-top: 1px solid #e0e0e0;
-            padding-top: 2.5rem;
-            margin-top: 0;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         .section:last-of-type {
+            border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
 
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #000000;
+        .project-item {
+            margin-bottom: 2rem;
         }
 
-        .project-item {
-            margin-bottom: 1.5rem;
+        .project-item:last-child {
+            margin-bottom: 0;
         }
 
         .project-name {
             font-weight: 600;
             color: #000000;
             margin-bottom: 0.25rem;
+            font-size: 1.3rem;
         }
 
         .project-name a {
@@ -129,27 +109,28 @@
 
         .project-date {
             color: #666666;
-            font-size: 0.85rem;
+            font-size: 1rem;
             margin-bottom: 0.5rem;
+            font-style: italic;
         }
 
         .project-description {
             color: #000000;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 1.15rem;
+            line-height: 1.8;
         }
 
         .footer {
-            margin-top: 2.5rem;
+            margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid #000000;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .footer-left {
@@ -163,25 +144,21 @@
         .social-links a {
             color: #000000;
             text-decoration: none;
-            margin-right: 1rem;
-            font-size: 0.9rem;
+            margin-right: 1.2rem;
             display: inline-flex;
             align-items: center;
             transition: all 0.2s ease;
+            border-bottom: none;
         }
 
         .social-links a:hover {
             transform: scale(1.1);
+            opacity: 1;
         }
 
         .social-icon {
-            width: 20px;
-            height: 20px;
-            fill: #000000;
-            transition: fill 0.2s ease;
-        }
-
-        .social-links a:hover .social-icon {
+            width: 22px;
+            height: 22px;
             fill: #000000;
         }
 
@@ -200,69 +177,45 @@
             justify-content: center;
             padding: 0.25rem;
             transition: all 0.2s ease;
+            border-bottom: none;
         }
 
         .webring a:hover {
             transform: scale(1.1);
+            opacity: 1;
         }
 
         .webring-arrow {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
             user-select: none;
-            transition: all 0.2s ease;
-            color: #000000;
-        }
-
-        .webring a:hover .webring-arrow {
             color: #000000;
         }
 
         .webring-icon {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             filter: brightness(0);
         }
 
         .copyright {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #000000;
+            font-style: italic;
         }
 
         @media (max-width: 768px) {
             body {
                 padding: 2rem 1.5rem;
-                max-width: 100%;
             }
 
             h1 {
-                font-size: 1.5rem;
-            }
-
-            .header {
-                margin-bottom: 1.5rem;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .subtitle {
-                order: 3;
-                margin-top: 1rem;
-            }
-
-            .nav-links {
-                position: relative;
-                top: auto;
-                right: auto;
-                margin-top: 2.5rem;
-                gap: 1rem;
-                font-size: 0.9rem;
-                order: 2;
+                font-size: 2.2rem;
             }
 
             .footer-content {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.5rem;
             }
 
             .webring {
@@ -282,16 +235,11 @@
             }
 
             h1 {
-                font-size: 1.3rem;
-            }
-
-            .nav-links {
-                gap: 0.75rem;
-                font-size: 0.85rem;
+                font-size: 1.8rem;
             }
 
             .section {
-                margin-bottom: 1.5rem;
+                margin-bottom: 2rem;
             }
         }
     </style>
@@ -304,15 +252,15 @@
     <hr class="header-divider">
 
     <div class="section">
-        <h2 class="section-title">PROJECTS</h2>
-        
+        <h2>Projects</h2>
+
         <div class="project-item">
             <div class="project-name">
                 <a href="https://github.com/zach3141592/UTRAHacks2025" target="_blank">Medispense</a>
             </div>
             <div class="project-date">2025</div>
             <div class="project-description">
-                A comprehensive healthcare solution with Arduino hardware, iOS app, and cloud backend 
+                A comprehensive healthcare solution with Arduino hardware, iOS app, and cloud backend
                 for smart medication dispensing and patient management. Winner of UTRAHacks 2025.
             </div>
         </div>
@@ -334,24 +282,24 @@
             </div>
             <div class="project-date">2024</div>
             <div class="project-description">
-                A Chrome extension designed to help young internet users break free from "brainrot" content 
+                A Chrome extension designed to help young internet users break free from "brainrot" content
                 and develop more meaningful communication patterns online. Winner of HammerHacks 2024.
             </div>
         </div>
     </div>
 
     <div class="section">
-        <h2 class="section-title">RESEARCH PAPERS</h2>
-        
+        <h2>Research Papers</h2>
+
         <div class="project-item">
             <div class="project-name">
                 <a href="https://journal.stemfellowship.org/doi/abs/10.17975/sfj-2025-001" target="_blank">
                     Optimizing Budget Allocations in Ontario School Boards
                 </a>
             </div>
-            <div class="project-date">Canadian Science Publishing • Feb 2025</div>
+            <div class="project-date">Canadian Science Publishing &bull; Feb 2025</div>
             <div class="project-description">
-                Research on optimizing budget allocations in Ontario school boards for efficient, 
+                Research on optimizing budget allocations in Ontario school boards for efficient,
                 equitable, and inclusive education through data-driven analysis and policy recommendations.
             </div>
         </div>
@@ -362,9 +310,9 @@
                     Spatial Analysis of Plant Species and Biological Variety
                 </a>
             </div>
-            <div class="project-date">Canadian Science Publishing • May 2024</div>
+            <div class="project-date">Canadian Science Publishing &bull; May 2024</div>
             <div class="project-description">
-                Utilizing spatial analysis to identify correlations between plant species and biological variety 
+                Utilizing spatial analysis to identify correlations between plant species and biological variety
                 to determine traits that foster biodiversity in ecosystems.
             </div>
         </div>
@@ -375,9 +323,9 @@
                     Housing Factors and Life Satisfaction for Sustainable Living
                 </a>
             </div>
-            <div class="project-date">Canadian Science Publishing • Apr 2023</div>
+            <div class="project-date">Canadian Science Publishing &bull; Apr 2023</div>
             <div class="project-description">
-                Investigating the correlation between various housing factors and life satisfaction 
+                Investigating the correlation between various housing factors and life satisfaction
                 to build a model for sustainable living and improved quality of life.
             </div>
         </div>
@@ -417,19 +365,19 @@
 
             <div class="webring">
                 <a href="https://cs.uwatering.com/#https://www.zacharyyu.com/?nav=prev" target="_blank" title="Previous site">
-                    <span class="webring-arrow">←</span>
+                    <span class="webring-arrow">&larr;</span>
                 </a>
                 <a href="https://cs.uwatering.com/#https://www.zacharyyu.com/" target="_blank" title="CS Webring">
                     <img src="https://cs.uwatering.com/icon.white.svg" alt="CS Webring" class="webring-icon">
                 </a>
                 <a href="https://cs.uwatering.com/#https://www.zacharyyu.com/?nav=next" target="_blank" title="Next site">
-                    <span class="webring-arrow">→</span>
+                    <span class="webring-arrow">&rarr;</span>
                 </a>
             </div>
         </div>
 
         <div class="copyright">
-            2026 © Zachary Yu
+            2026 &copy; Zachary Yu
         </div>
     </div>
     <script>
