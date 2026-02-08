@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing - Zachary Yu</title>
+    <link rel="icon" type="image/png" href="/yu.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.8;
+            padding: 4rem 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .header { margin-bottom: 2rem; }
+        h1 { font-size: 2.2rem; font-weight: 400; margin-bottom: 0; color: #000000; letter-spacing: 0.02em; }
+        a { color: #000000; text-decoration: none; font-weight: 500; border-bottom: 1px solid #000000; transition: opacity 0.2s ease; }
+        a:hover { opacity: 0.6; }
+        h1 a { border-bottom: none; }
+        h1 a:hover { opacity: 1; }
+        .korean { font-family: 'Noto Serif KR', serif; }
+        .nav { margin-top: 1rem; display: flex; gap: 1.5rem; }
+        .nav a { font-size: 1rem; font-weight: 400; color: #000000; text-decoration: none; border-bottom: none; letter-spacing: 0.03em; transition: opacity 0.2s ease; }
+        .nav a:hover { opacity: 0.6; }
+        .header-divider { border: none; height: 1px; background-color: #000000; margin: 1rem 0 2.5rem 0; }
+        .coming-soon { font-size: 1.1rem; font-style: italic; color: #666666; margin-top: 2rem; }
+        @media (max-width: 768px) { body { padding: 2rem 1.5rem; } h1 { font-size: 2.2rem; } }
+        @media (max-width: 480px) { body { padding: 1.5rem 1rem; } h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><a href="/">Zachary Yu <span class="korean">(유진영)</span></a></h1>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/writing">Writing</a>
+            <a href="/random">Random</a>
+        </nav>
+    </div>
+    <hr class="header-divider">
+    <p class="coming-soon">Coming soon.</p>
+    <script>
+        window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
