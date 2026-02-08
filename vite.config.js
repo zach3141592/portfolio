@@ -12,7 +12,9 @@ export default defineConfig({
         main: './index.html',
         projects: './projects.html',
         about: './about.html',
-        other: './other.html'
+        other: './other.html',
+        writing: './writing.html',
+        random: './random.html'
       }
     }
   },
