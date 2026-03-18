@@ -10,11 +10,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
-        projects: './projects.html',
-        about: './about.html',
-        other: './other.html',
-        writing: './writing.html',
-        random: './random.html'
+        building: './building.html',
+        blog: './blog.html',
+        investing: './investing.html'
       }
     }
   },

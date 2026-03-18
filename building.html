@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building - Zachary Yu</title>
+    <link rel="icon" type="image/png" href="/yu.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.8;
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .layout { display: flex; gap: 4rem; }
+        .sidebar { width: 160px; flex-shrink: 0; padding-top: 0.5rem; }
+        .content { flex: 1; min-width: 0; }
+        .header { margin-bottom: 2rem; }
+        h1 { font-size: 2.2rem; font-weight: 400; margin-bottom: 0; color: #000000; letter-spacing: 0.02em; }
+        a { color: #000000; text-decoration: none; font-weight: 500; border-bottom: 1px solid #000000; transition: opacity 0.2s ease; }
+        a:hover { opacity: 0.6; }
+        h1 a { border-bottom: none; }
+        h1 a:hover { opacity: 1; }
+        .korean { font-family: 'Noto Serif KR', serif; }
+        .nav { display: flex; flex-direction: column; gap: 0.75rem; position: sticky; top: 4rem; }
+        .nav a { font-size: 1rem; font-weight: 400; color: #000000; text-decoration: none; border-bottom: none; letter-spacing: 0.03em; transition: opacity 0.2s ease; }
+        .nav a:hover { opacity: 0.6; }
+        .header-divider { border: none; height: 1px; background-color: #000000; margin: 1rem 0 2.5rem 0; }
+        .project-list { list-style: none; padding: 0; }
+        .project-list li { margin-bottom: 0.75rem; font-size: 1.1rem; }
+        @media (max-width: 768px) { body { padding: 2rem 1.5rem; } .layout { flex-direction: column; gap: 0; } .sidebar { width: 100%; padding-top: 0; margin-bottom: 1rem; } .nav { flex-direction: row; gap: 1.5rem; position: static; } h1 { font-size: 2.2rem; } }
+        @media (max-width: 480px) { body { padding: 1.5rem 1rem; } h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/building">Building</a>
+                <a href="/blog">Blog</a>
+                <a href="/investing">Investing</a>
+            </nav>
+        </aside>
+        <main class="content">
+            <div class="header">
+                <h1><a href="/">Zachary Yu <span class="korean">(유진영)</span></a></h1>
+            </div>
+            <hr class="header-divider">
+            <ul class="project-list">
+                <li><a href="https://handsforu.com" target="_blank">Hands</a></li>
+                <li><a href="https://cacheai.us" target="_blank">CacheAI</a></li>
+                <li><a href="https://zacharyyu.com" target="_blank">Zachary Yu</a></li>
+                <li><a href="https://vibeornot.com" target="_blank">Vibe or Not</a></li>
+                <li><a href="https://mercor.com" target="_blank">Mercor</a></li>
+                <li><a href="https://goonhacks.ca" target="_blank">GoOnHacks</a></li>
+                <li><a href="https://tunesform.com" target="_blank">TunesForm</a></li>
+                <li><a href="https://hwyd.ai" target="_blank">HWYD</a></li>
+                <li><a href="https://arxivmap.org" target="_blank">Arxiv Map</a></li>
+                <li><a href="https://traverse.so" target="_blank">Traverse</a></li>
+            </ul>
+        </main>
+    </div>
+    <script>
+        window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
