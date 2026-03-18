@@ -13,8 +13,7 @@ export default defineConfig({
         building: './building.html',
         blog: './blog.html',
         investing: './investing.html',
-        history: './history.html',
-        random: './random.html'
+        archive: './archive.html'
       }
     }
   },
