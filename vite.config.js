@@ -12,7 +12,8 @@ export default defineConfig({
         main: './index.html',
         building: './building.html',
         blog: './blog.html',
-        investing: './investing.html'
+        investing: './investing.html',
+        history: './history.html'
       }
     }
   },
