@@ -32,6 +32,10 @@
         .nav { display: flex; flex-direction: column; gap: 0.75rem; position: sticky; top: 4rem; }
         .nav a { font-size: 1rem; font-weight: 400; color: #000000; text-decoration: none; border-bottom: none; letter-spacing: 0.03em; transition: opacity 0.2s ease; }
         .nav a:hover { opacity: 0.6; }
+        .nav a { position: relative; display: inline; }
+        @keyframes slideIn { from { width: 0; } to { width: 60%; } }
+        .nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background-color: #cccccc; }
+        .nav a.active::after { animation: slideIn 0.4s ease forwards; }
         .header-divider { border: none; height: 1px; background-color: #000000; margin: 1rem 0 2.5rem 0; }
         .project-list { list-style: none; padding: 0; }
         .project-list li { margin-bottom: 0.75rem; font-size: 1.1rem; }
@@ -44,7 +48,7 @@
         <aside class="sidebar">
             <nav class="nav">
                 <a href="/">Home</a>
-                <a href="/building">Building</a>
+                <a href="/building" class="active">Building</a>
                 <a href="/blog">Blog</a>
                 <a href="/investing">Investing</a>
             </nav>
