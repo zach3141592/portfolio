@@ -20,7 +20,7 @@
             margin: 0 auto;
         }
         .layout { display: flex; gap: 4rem; }
-        .sidebar { width: 160px; flex-shrink: 0; padding-top: 0.5rem; }
+        .sidebar { width: 160px; flex-shrink: 0; padding-top: 0.5rem; position: sticky; top: 4rem; align-self: flex-start; }
         .content { flex: 1; min-width: 0; }
         .header { margin-bottom: 2rem; }
         h1 { font-size: 2.2rem; font-weight: 400; margin-bottom: 0; color: #000000; letter-spacing: 0.02em; }
@@ -29,7 +29,7 @@
         h1 a { border-bottom: none; }
         h1 a:hover { opacity: 1; }
         .korean { font-family: 'Noto Serif KR', serif; }
-        .nav { display: flex; flex-direction: column; gap: 0.75rem; position: sticky; top: 4rem; }
+        .nav { display: flex; flex-direction: column; gap: 0.75rem; }
         .nav a { font-size: 1rem; font-weight: 400; color: #000000; text-decoration: none; border-bottom: none; letter-spacing: 0.03em; transition: opacity 0.2s ease; }
         .nav a:hover { opacity: 0.6; }
         .nav a { position: relative; display: inline; }
@@ -47,7 +47,7 @@
         .webring a:hover { opacity: 0.6; }
         .webring-arrow { font-size: 1.15rem; font-weight: 400; user-select: none; color: #000000; }
         .webring-icon { width: 26px; height: 26px; filter: brightness(0); }
-        @media (max-width: 768px) { body { padding: 2rem 1.5rem; } .layout { flex-direction: column; gap: 0; } .sidebar { width: 100%; padding-top: 0; margin-bottom: 1rem; } .nav { flex-direction: row; gap: 1.5rem; position: static; } .sidebar-social { flex-direction: row; gap: 1.5rem; margin-top: 1rem; } .social-links { flex-direction: row; gap: 1rem; } h1 { font-size: 2.2rem; } }
+        @media (max-width: 768px) { body { padding: 2rem 1.5rem; } .layout { flex-direction: column; gap: 0; } .sidebar { width: 100%; padding-top: 0; margin-bottom: 1rem; position: static; } .nav { flex-direction: row; gap: 1.5rem; position: static; } .sidebar-social { flex-direction: row; gap: 1.5rem; margin-top: 1rem; } .social-links { flex-direction: row; gap: 1rem; } h1 { font-size: 2.2rem; } }
         @media (max-width: 480px) { body { padding: 1.5rem 1rem; } h1 { font-size: 1.8rem; } }
     </style>
 </head>
@@ -86,7 +86,6 @@
                 <h1><a href="/">Zachary Yu <span class="korean">(유진영)</span></a></h1>
             </div>
             <hr class="header-divider">
-            <p class="coming-soon">Coming soon.</p>
         </main>
     </div>
     <script>
