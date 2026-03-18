@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Building - Zachary Yu</title>
+    <title>History - Zachary Yu</title>
     <link rel="icon" type="image/png" href="/yu.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,24 +37,7 @@
         .nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background-color: #cccccc; }
         .nav a.active::after { animation: slideIn 0.4s ease forwards; }
         .header-divider { border: none; height: 1px; background-color: #000000; margin: 1rem 0 2.5rem 0; }
-        .project-list { list-style: none; padding: 0; counter-reset: projects; }
-        .project-list li {
-            display: flex;
-            gap: 1.25rem;
-            margin-bottom: 1.25rem;
-            align-items: flex-start;
-        }
-        .project-list li::before {
-            counter-increment: projects;
-            content: counter(projects);
-            color: #999999;
-            font-size: 0.95rem;
-            flex-shrink: 0;
-            padding-top: 0.1rem;
-        }
-        .project-info { display: flex; flex-direction: column; gap: 0.25rem; }
-        .project-info a { font-size: 1.1rem; font-weight: 500; border-bottom: none; align-self: flex-start; text-decoration: underline; text-underline-offset: 2px; }
-        .project-desc { color: #666666; font-size: 0.95rem; font-weight: 400; line-height: 1.6; }
+        .coming-soon { font-size: 1.1rem; font-style: italic; color: #666666; margin-top: 2rem; }
         .sidebar-social { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
         .social-links { display: flex; flex-direction: column; gap: 0.5rem; }
         .social-links a { font-size: 1rem; font-weight: 400; color: #000000; text-decoration: none; border-bottom: none; letter-spacing: 0.03em; transition: opacity 0.2s ease; }
@@ -73,10 +56,10 @@
         <aside class="sidebar">
             <nav class="nav">
                 <a href="/">Home</a>
-                <a href="/building" class="active">Building</a>
+                <a href="/building">Building</a>
                 <a href="/blog">Blog</a>
                 <a href="/investing">Investing</a>
-                <a href="/history">History</a>
+                <a href="/history" class="active">History</a>
             </nav>
             <div class="sidebar-social">
                 <div class="social-links">
@@ -103,68 +86,7 @@
                 <h1><a href="/">Zachary Yu <span class="korean">(유진영)</span></a></h1>
             </div>
             <hr class="header-divider">
-            <ul class="project-list">
-                <li>
-                    <div class="project-info">
-                        <a href="https://traverse.so" target="_blank">traverse.so</a>
-                        <span class="project-desc">Reinforcement learning environments for the real world. Backed by Y Combinator and angels from OpenAI, Anthropic, and Google Deepmind</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="project-info">
-                        <a href="https://arxivmap.org" target="_blank">arxivmap.org</a>
-                        <span class="project-desc">Visual explorer for academic papers on arXiv</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="project-info">
-                        <a href="https://hwyd.ai" target="_blank">hwyd.ai</a>
-                        <span class="project-desc">The AI native diary. Made this to keep track of my life.</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="project-info">
-                        <a href="https://tunesform.com" target="_blank">tunesform.com</a>
-                        <span class="project-desc">Cursor for jazz lead sheets. 10K+ unique users, 11 paying users</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="project-info">
-                        <a href="https://goonhacks.ca" target="_blank">goonhacks.ca</a>
-                        <span class="project-desc">Founded, Organized, Lead, and Executed. 800+ applicants, 150+ hackers, 49 projects</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="project-info">
-                        <a href="https://mercor.com" target="_blank">mercor.com</a>
-                        <span class="project-desc">AI recruiting platform. Worked on core product</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="project-info">
-                        <a href="https://vibeornot.com" target="_blank">vibeornot.com</a>
-                        <span class="project-desc">Made in 24 hours, grew to 25K+ unique users</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="project-info">
-                        <a href="https://zacharyyu.com" target="_blank">zacharyyu.com</a>
-                        <span class="project-desc">This website</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="project-info">
-                        <a href="https://cacheai.us" target="_blank">cacheai.us</a>
-                        <span class="project-desc">AI-powered caching infrastructure</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="project-info">
-                        <a href="https://handsforu.com" target="_blank">handsforu.com</a>
-                        <span class="project-desc">Prosthetic hands accessibility project</span>
-                    </div>
-                </li>
-            </ul>
+            <p class="coming-soon">Coming soon.</p>
         </main>
     </div>
     <script>
