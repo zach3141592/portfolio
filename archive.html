@@ -38,13 +38,20 @@
         .nav a.active::after { animation: slideIn 0.4s ease forwards; }
         .header-divider { border: none; height: 1px; background-color: #000000; margin: 1rem 0 2.5rem 0; }
         .random-intro { font-size: 1.1rem; font-style: italic; color: #666666; margin-bottom: 2rem; }
-        .achievements { list-style: none; padding: 0; font-variant-numeric: lining-nums; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid #e0e0e0; }
+        .achievements { list-style: none; padding: 0; font-variant-numeric: lining-nums; }
         .achievements li { font-size: 0.95rem; line-height: 1.8; color: #000000; }
         .achievements li::before { content: '\2014\00a0'; color: #999999; }
         .timeline { list-style: none; padding: 0; }
         .timeline li { display: flex; gap: 1.25rem; margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.8; }
         .timeline-date { color: #999999; flex-shrink: 0; width: 5.5rem; font-style: italic; font-variant-numeric: lining-nums; }
         .timeline-event { color: #000000; }
+        details { border-bottom: 1px solid #e0e0e0; margin-bottom: 0; }
+        details[open] { padding-bottom: 2rem; }
+        summary { list-style: none; cursor: pointer; font-size: 1rem; font-weight: 500; letter-spacing: 0.03em; padding: 1.25rem 0; display: flex; align-items: center; gap: 0.6rem; user-select: none; }
+        summary::-webkit-details-marker { display: none; }
+        summary::before { content: '+'; font-size: 1rem; color: #999999; width: 1rem; text-align: center; transition: transform 0.2s ease; }
+        details[open] summary::before { content: '\2212'; }
+        summary:hover { opacity: 0.6; }
         .sidebar-social { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
         .social-links { display: flex; flex-direction: column; gap: 0.5rem; }
         .social-links a { font-size: 1rem; font-weight: 400; color: #000000; text-decoration: none; border-bottom: none; letter-spacing: 0.03em; transition: opacity 0.2s ease; }
@@ -93,57 +100,66 @@
             </div>
             <hr class="header-divider">
             <p class="random-intro">If you want to know more about me... Here's a random, disorganized collection of things I've done</p>
-            <ul class="achievements">
-                <li>I've spent a total of 6 weeks portaging in the Canadian wilderness</li>
-                <li>Sold elastic guns made of paper, tape, and binder clips in middle school for 5 bucks a pop. Made 3 grand</li>
-                <li>I like to play jazz piano and guitar. Placed 1st Overall at the Worldstrides International Music Festival</li>
-                <li>Played Varsity and CYBL Basketball. Won the CISSA Boys Basketball National Championship</li>
-                <li>Avid chess player. 1946 chess.com Elo (5 min)</li>
-            </ul>
-            <ul class="achievements">
-                <li>3X Canadian National Big Data Challenge Winner</li>
-                <li>5X Hackathon Winner</li>
-                <li>1580 SAT Score</li>
-                <li>5s on AP Calc BC, Physics C, Physics 1, Chem, Bio, CS A, CS P, Lit</li>
-                <li>Top 1% in Fermat, Hypatia, Euclid, CSMC, COMC, CCC contests</li>
-                <li>Member of Mensa</li>
-                <li>Duke of Edinburgh Bronze, Silver, and Gold awards</li>
-                <li>DECA Provincial Medallist</li>
-            </ul>
-            <ul class="timeline">
-                <li>
-                    <span class="timeline-date">Dec 2025</span>
-                    <span class="timeline-event">Moved to San Francisco to do YC</span>
-                </li>
-                <li>
-                    <span class="timeline-date">Nov 2025</span>
-                    <span class="timeline-event">Got into Y Combinator W26 with Jared Friedman as my group partner</span>
-                </li>
-                <li>
-                    <span class="timeline-date">Sep 2025</span>
-                    <span class="timeline-event">Started my CS degree at the University of Waterloo</span>
-                </li>
-                <li>
-                    <span class="timeline-date">Jun 2025</span>
-                    <span class="timeline-event">Graduated from high school</span>
-                </li>
-                <li>
-                    <span class="timeline-date">Jun 2023</span>
-                    <span class="timeline-event">Did SHAD at the University of New Brunswick</span>
-                </li>
-                <li>
-                    <span class="timeline-date">Sep 2021</span>
-                    <span class="timeline-event">Started high school at Hillfield Strathallan College</span>
-                </li>
-                <li>
-                    <span class="timeline-date">Sep 2013</span>
-                    <span class="timeline-event">Started elementary school at Rotherglen School in Oakville</span>
-                </li>
-                <li>
-                    <span class="timeline-date">Sep 2010</span>
-                    <span class="timeline-event">Started preschool at Glen Abbey Montessori School</span>
-                </li>
-            </ul>
+            <details>
+                <summary>Side Quests</summary>
+                <ul class="achievements">
+                    <li>I've spent a total of 6 weeks portaging in the Canadian wilderness</li>
+                    <li>Sold elastic guns made of paper, tape, and binder clips in middle school for 5 bucks a pop. Made 3 grand</li>
+                    <li>I like to play jazz piano and guitar. Placed 1st Overall at the Worldstrides International Music Festival</li>
+                    <li>Played Varsity and CYBL Basketball. Won the CISSA Boys Basketball National Championship</li>
+                    <li>Avid chess player. 1946 chess.com Elo (5 min)</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Random Stats</summary>
+                <ul class="achievements">
+                    <li>3X Canadian National Big Data Challenge Winner</li>
+                    <li>5X Hackathon Winner</li>
+                    <li>1580 SAT Score</li>
+                    <li>5s on AP Calc BC, Physics C, Physics 1, Chem, Bio, CS A, CS P, Lit</li>
+                    <li>Top 1% in Fermat, Hypatia, Euclid, CSMC, COMC, CCC contests</li>
+                    <li>Member of Mensa</li>
+                    <li>Duke of Edinburgh Bronze, Silver, and Gold awards</li>
+                    <li>DECA Provincial Medallist</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Time Line</summary>
+                <ul class="timeline">
+                    <li>
+                        <span class="timeline-date">Dec 2025</span>
+                        <span class="timeline-event">Moved to San Francisco to do YC</span>
+                    </li>
+                    <li>
+                        <span class="timeline-date">Nov 2025</span>
+                        <span class="timeline-event">Got into Y Combinator W26 with Jared Friedman as my group partner</span>
+                    </li>
+                    <li>
+                        <span class="timeline-date">Sep 2025</span>
+                        <span class="timeline-event">Started my CS degree at the University of Waterloo</span>
+                    </li>
+                    <li>
+                        <span class="timeline-date">Jun 2025</span>
+                        <span class="timeline-event">Graduated from high school</span>
+                    </li>
+                    <li>
+                        <span class="timeline-date">Jun 2023</span>
+                        <span class="timeline-event">Did SHAD at the University of New Brunswick</span>
+                    </li>
+                    <li>
+                        <span class="timeline-date">Sep 2021</span>
+                        <span class="timeline-event">Started high school at Hillfield Strathallan College</span>
+                    </li>
+                    <li>
+                        <span class="timeline-date">Sep 2013</span>
+                        <span class="timeline-event">Started elementary school at Rotherglen School in Oakville</span>
+                    </li>
+                    <li>
+                        <span class="timeline-date">Sep 2010</span>
+                        <span class="timeline-event">Started preschool at Glen Abbey Montessori School</span>
+                    </li>
+                </ul>
+            </details>
         </main>
     </div>
     <script>
