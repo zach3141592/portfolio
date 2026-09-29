@@ -9,22 +9,22 @@
   "redirects": [
     {
       "source": "/building",
-      "destination": "/#building",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/blog",
-      "destination": "/#blog",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/archive",
-      "destination": "/#archive",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/investing",
-      "destination": "/#building",
+      "destination": "/",
       "permanent": true
     }
   ]
