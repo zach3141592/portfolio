@@ -26,6 +26,7 @@
       margin: 0 0 1.5em;
     }
     h3 {
+      font-size: 1em;
       margin: 2em 0 0.75em;
     }
     p {
@@ -36,7 +37,7 @@
       padding-left: 1.5em;
     }
     li {
-      margin-bottom: 0.4em;
+      margin-bottom: 0.1em;
     }
     hr {
       border: none;
@@ -54,20 +55,26 @@
     a.plain-link:hover {
       text-decoration: underline;
     }
+    .site-footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0 6px;
+    }
     .webring {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      vertical-align: middle;
     }
     .webring img {
       width: 18px;
       height: 18px;
       filter: brightness(0);
-      vertical-align: middle;
+      display: block;
     }
     .webring a {
       text-decoration: none;
+      line-height: 1;
     }
     .site-footer {
       margin: 0 auto 40px;
