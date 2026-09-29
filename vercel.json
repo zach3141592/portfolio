@@ -5,5 +5,27 @@
   "installCommand": "npm install",
   "framework": null,
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/building",
+      "destination": "/#building",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/#blog",
+      "permanent": true
+    },
+    {
+      "source": "/archive",
+      "destination": "/#archive",
+      "permanent": true
+    },
+    {
+      "source": "/investing",
+      "destination": "/#building",
+      "permanent": true
+    }
+  ]
 }

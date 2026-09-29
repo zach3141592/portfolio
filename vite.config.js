@@ -9,11 +9,7 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       input: {
-        main: './index.html',
-        building: './building.html',
-        blog: './blog.html',
-        investing: './investing.html',
-        archive: './archive.html'
+        main: './index.html'
       }
     }
   },
