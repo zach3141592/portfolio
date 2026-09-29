@@ -36,6 +36,22 @@
     a.plain-link:hover {
       text-decoration: underline;
     }
+    .webring {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      vertical-align: middle;
+    }
+    .webring img {
+      width: 18px;
+      height: 18px;
+      filter: brightness(0);
+      vertical-align: middle;
+    }
+    .webring a {
+      text-decoration: none;
+      color: #111;
+    }
     .site-footer {
       margin: 60px auto 30px;
       max-width: 650px;
@@ -71,7 +87,11 @@
     <a href="https://www.linkedin.com/in/zacharyyu/" target="_blank">LinkedIn</a> ·
     <a href="https://github.com/zach3141592" target="_blank">GitHub</a> ·
     <a href="mailto:zach@belvedir.ai">Email</a> ·
-    <a href="https://cs.uwatering.com/#https://www.zacharyyu.com/" target="_blank">CS Webring</a>
+    <span class="webring">
+      <a href="https://cs.uwatering.com/#https://www.zacharyyu.com/?nav=prev" target="_blank" title="Previous site">&#8249;</a>
+      <a href="https://cs.uwatering.com/#https://www.zacharyyu.com/" target="_blank" title="CS Webring"><img src="https://cs.uwatering.com/icon.white.svg" alt="CS Webring"></a>
+      <a href="https://cs.uwatering.com/#https://www.zacharyyu.com/?nav=next" target="_blank" title="Next site">&#8250;</a>
+    </span>
   </nav>
 </footer>
 
