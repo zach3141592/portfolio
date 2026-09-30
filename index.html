@@ -8,14 +8,24 @@
   <title>Zachary Yu</title>
   <link rel="icon" type="image/png" href="/yu.png">
   <style>
-    html {
-      scrollbar-gutter: stable;
-      overscroll-behavior-y: none;
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      overscroll-behavior: none;
     }
     body {
-      overscroll-behavior-y: none;
       line-height: 1.6;
       font-size: 16px;
+    }
+    .page {
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      overscroll-behavior-y: none;
+      scrollbar-gutter: stable;
+    }
+    .page-inner {
       padding: 0 10px;
       margin: 50px auto;
       max-width: 650px;
@@ -78,10 +88,12 @@
     }
     @media (max-width: 600px) {
       body {
-        margin: 28px auto;
-        padding: 0 20px;
         font-size: 17px;
         -webkit-text-size-adjust: 100%;
+      }
+      .page-inner {
+        margin: 28px auto;
+        padding: 0 20px;
       }
       #maincontent {
         margin-top: 20px;
@@ -106,6 +118,8 @@
   </style>
 </head>
 <body>
+  <div class="page">
+  <div class="page-inner">
   <main>
     <div id="maincontent">
       <div id="page-content">
@@ -142,6 +156,8 @@
     </span>
   </nav>
 </footer>
+  </div>
+  </div>
 
   <script>
     window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
