@@ -108,11 +108,27 @@
         margin: 2em 0 1.25em;
       }
       .site-footer nav {
-        gap: 10px 20px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 0 8px;
+        font-size: 15px;
+        white-space: nowrap;
       }
       .site-footer a {
         padding: 4px 0;
         display: inline-block;
+      }
+      .webring {
+        gap: 4px;
+      }
+    }
+    @media (max-width: 359px) {
+      .site-footer nav {
+        font-size: 14px;
+      }
+      .webring img {
+        width: 16px;
+        height: 16px;
       }
     }
   </style>
